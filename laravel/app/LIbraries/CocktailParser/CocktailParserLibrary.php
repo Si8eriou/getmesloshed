@@ -4,11 +4,49 @@
 namespace App\LIbraries\CocktailParser;
 
 
+use App\Models\Tag;
 use App\Repositories\Cocktail\CocktailRepository;
 use App\LIbraries\CocktailParser\TheCocktailDbLibrary;
 
+use App\Models\Glass;
+use App\Models\Category;
+use App\Models\Drink;
+use App\Models\Ingredient;
+use App\Models\DrinkIngredientRelationship;
+use App\Models\DrinkUserRelationShip;
+
 class CocktailParserLibrary
 {
+    /**
+     * @var Glass
+     */
+    private $glass;
+
+    /**
+     * @var Category
+     */
+    private $category;
+
+    /**
+     * @var Drink
+     */
+    private $drink;
+
+    /**
+     * @var Ingredient
+     */
+    private $ingredient;
+
+    /**
+     * @var DrinkIngredientRelationship
+     */
+    private $drinkIngredientRelationship;
+
+    /**
+     * @var DrinkUserRelationShip
+     */
+    private $drinkUserRelationShip;
+
     /**
      * @var CocktailRepository
      */
@@ -66,204 +104,329 @@ class CocktailParserLibrary
 
     public function __construct()
     {
-        $this->cocktailDbIngredients = $this->getAllCockTailDbIngredients();
-        $this->cocktailDbGlasses = $this->getAllCockTailDbGlasses();
-        $this->cocktailDbCocktails = $this->getAllCockTailDbCocktails();
-        $this->cocktailDbCategories = $this->getAllCockTailDbCategories();
+        $this->cocktailDbLibrary = new TheCocktailDbLibrary();
+        $this->cocktailRepository = new CocktailRepository();
         $this->ingredients = $this->getAllIngredients();
         $this->glasses = $this->getAllGlasses();
+        $this->cocktailDbIngredients = $this->getAllCockTailDbIngredients();
+        $this->cocktailDbGlasses = $this->getAllCockTailDbGlasses();
+        $this->cocktailDbCategories = $this->getAllCockTailDbCategories();
         $this->categories = $this->getAllCategories();
+        $this->cocktailDbCocktails = $this->getAllCockTailDbCocktails();
         $this->cocktails = $this->getAllCocktails();
     }
 
-    public function parseCocktailDb() {
+    public function parseCocktailDb()
+    {
         $this->parseIngredients();
         $this->parseGlasses();
+        $this->parseCategories();
         $this->glasses = $this->getAllGlasses();
         $this->ingredients = $this->getAllIngredients();
+        $this->categories = $this->getAllCategories();
+
         $this->parseCocktails();
+
+        return $this->cocktails;
     }
 
-    private function getAllCockTailDbIngredients() {
-        return $this->theCocktailDbLibrary->getAllDrinkIngredients();
+    private function getAllCockTailDbIngredients()
+    {
+        return $this->cocktailDbLibrary->getAllDrinkIngredients();
     }
 
-    private function getAllCockTailDbCocktails() {
-        return $this->theCocktailDbLibrary->getAllCocktails();
+    private function getAllCockTailDbCocktails()
+    {
+        return $this->cocktailDbLibrary->getAllCocktails();
     }
 
-    private function getAllCockTailDbGlasses() {
-        return $this->theCocktailDbLibrary->getAllDrinkGlasses();
+    private function getAllCockTailDbGlasses()
+    {
+        return $this->cocktailDbLibrary->getAllDrinkGlasses();
     }
 
-    private function getAllCockTailDbCategories() {
-        return $this->theCocktailDbLibrary->getAllDrinkCategories();
+    private function getAllCockTailDbCategories()
+    {
+        return $this->cocktailDbLibrary->getAllDrinkCategories();
     }
 
-    private function getDrinkCocktailDbAlcoholicTypes() {
-        return $this->theCocktailDbLibrary->getDrinkAlcoholicTypes();
+    private function getDrinkCocktailDbAlcoholicTypes()
+    {
+        return $this->cocktailDbLibrary->getDrinkAlcoholicTypes();
     }
 
-    private function getAllIngredients() {
-        return [false];
+    private function getAllIngredients()
+    {
+        return $this->cocktailRepository->getAllDrinkIngredients();
     }
 
-    private function getAllCocktails() {
-        return [false];
+    private function getAllCocktails()
+    {
+        return $this->cocktailRepository->getAllCocktails();
     }
 
-    private function getAllGlasses() {
-        return [false];
+    private function getAllGlasses()
+    {
+        return $this->cocktailRepository->getAllDrinkGlasses();
     }
 
-    private function getAllCategories() {
-        return [false];
+    private function getAllCategories()
+    {
+        return $this->cocktailRepository->getAllDrinkCategories();
     }
 
-    private function parseIngredients() {
-        foreach($this->cocktailDbIngredients as $ingredient) {
-            if (!array_key_exists($ingredient, $this->ingredients)) {
+    private function getAllTags()
+    {
+        return $this->cocktailRepository->getAllTags();
+    }
+
+    private function getCurrentSavedIngredientRelationships() {
+        return $this->cocktailRepository->getCurrentSavedIngredientRelationships();
+    }
+
+    private function parseIngredients()
+    {
+        foreach ($this->cocktailDbIngredients['drinks'] as $ingredient) {
+            if (!empty($this->ingredients)) {
+                if (!array_key_exists($this->capatalizeWords($ingredient['strIngredient1']), $this->ingredients)) {
+                    $this->saveNewIngredient($ingredient);
+                }
+            } else {
                 $this->saveNewIngredient($ingredient);
             }
         }
     }
 
-    private function parseGlasses() {
-        foreach($this->cocktailDbGlasses as $glass) {
-            if (!array_key_exists($glass, $this->glasses)) {
-                $this->saveNewGlass($glass);
+    private function parseGlasses()
+    {
+        foreach ($this->cocktailDbGlasses['drinks'] as $glass) {
+            if ($glass['strGlass'] !== '') {
+                if (!empty($this->glasses)) {
+                    if (!array_key_exists($this->capatalizeWords($glass['strGlass']), $this->glasses)) {
+                        $this->saveNewGlass($glass);
+                    }
+                } else {
+                    $this->saveNewGlass($glass);
+                }
             }
         }
     }
 
-    private function parseCocktails() {
-        foreach($this->cocktailDbCocktails as $cocktail) {
-            if (!array_key_exists($cocktail, $this->cocktails)) {
-                $newCocktail = $this->saveNewCocktail($cocktail);
-                $this->saveCocktailIngredientRelation($newCocktail,$cocktail);
+    private function parseCategories()
+    {
+        foreach ($this->cocktailDbCategories['drinks'] as $category) {
+            if (!empty($this->categories)) {
+                if (!array_key_exists($this->capatalizeWords($category['strCategory']), $this->categories)) {
+                    $this->saveNewCategory($category);
+                }
+            } else {
+                $this->saveNewCategory($category);
             }
         }
     }
 
-    private function getGlassID($glass) {
-        return $this->ingredients[$glass->name]['id'];
+    private function parseCocktails()
+    {
+        foreach ($this->cocktailDbCocktails as $letter) {
+            if ($letter['drinks']) {
+                foreach ($letter['drinks'] as $cocktail) {
+                    if (!empty($this->cocktails)) {
+                        if (!array_key_exists($this->capatalizeWords($cocktail['strDrink']), $this->cocktails)) {
+                            $newCocktail = $this->saveNewCocktail($cocktail);
+                            $this->saveCocktailIngredientRelation($newCocktail, $cocktail);
+                            $this->saveCocktailTagRelationship($newCocktail, $cocktail);
+                        }
+                    } else {
+                        $newCocktail = $this->saveNewCocktail($cocktail);
+                        $this->saveCocktailIngredientRelation($newCocktail, $cocktail);
+                    }
+                }
+            }
+        }
     }
 
-    private function getCategoryID($category) {
-        return $this->ingredients[$category->name]['id'];
+    private function getGlassID($cocktail)
+    {
+        return $this->glasses[$this->capatalizeWords($cocktail['strGlass'])]['id'];
     }
 
-    private function getIngredientID($ingredient) {
-        return $this->ingredients[$ingredient->name]['id'];
+    private function getCategoryID($cocktail)
+    {
+        return $this->categories[$this->capatalizeWords($cocktail['strCategory'])]['id'];
     }
 
-    private function saveNewCocktail($cocktail) {
-//        $newCocktail = new Cocktail;
+    private function getIngredientID($ingredient)
+    {
+        return $this->ingredients[$this->capatalizeWords($ingredient['name'])]['id'] ?? '';
+    }
 
-        $newCocktail->glass_id = $this->getGlassID($cocktail);
-        $newCocktail->name = $cocktail->name;
-        $newCocktail->category = $this->getCategoryID($cocktail);
-        $newCocktail->instruction = $cocktail->strInstructions;
-        $newCocktail->alcoholic = $cocktail->strAlcoholic;
-        $newCocktail->video = $cocktail->strVideo;
-        $newCocktail->image = $cocktail->strDrinkThumb;
+    private function saveNewCocktail($cocktail)
+    {
+        $newCocktail = new Drink();
 
-        $drink->save();
+        $newCocktail->glassID = $this->getGlassID($cocktail) ?? '';
+        $newCocktail->name = $this->capatalizeWords($cocktail['strDrink']) ?? '';
+        $newCocktail->categoryID = $this->getCategoryID($cocktail) ?? '';
+        $newCocktail->instruction = $cocktail['strInstructions'] ?? '';
+        $newCocktail->alcoholic = $cocktail['strAlcoholic'] ?? '';
+        $newCocktail->video = $cocktail['strVideo'] ?? '';
+        $newCocktail->image = $cocktail['strDrinkThumb'] ?? '';
+        $newCocktail->image = $cocktail['strDrinkThumb'] ?? '';
+
+        $newCocktail->save();
 
         return $newCocktail;
     }
 
-    private function saveNewGlass($glass) {
-        //        $glass = new Glass;
+    private function saveNewGlass($glass)
+    {
+        $newGlass = new Glass;
 
-//        $glass->name = $glass->strGlass;
-//        $glass->save();
+        $newGlass->name = $this->capatalizeWords($glass['strGlass']);
+        $newGlass->save();
     }
 
-    private function saveNewIngredient($ingredient) {
-//        $ingredient = new Ingredient;
+    private function saveNewIngredient($ingredient)
+    {
+        $newIngredient = new Ingredient;
 
-//        $ingredient->type = 0;
-//        $ingredient->name = $ingredient->strIngredient1;
-//        $ingredient->save();
+        $newIngredient->type = 0;
+        $newIngredient->name = $this->capatalizeWords($ingredient['strIngredient1']);
+        $newIngredient->save();
     }
 
-    private function saveCocktailIngredientRelation($newCocktail, $cocktail) {
+    private function saveNewCategory($category)
+    {
+        $newCategory = new Category();
+
+        $newCategory->name = $this->capatalizeWords($category['strCategory']);
+
+        $newCategory->save();
+    }
+
+    private function saveCocktailIngredientRelation($newCocktail, $cocktail)
+    {
+        $this->deleteCocktailIngredientRelations($newCocktail->id);
         $ingredientsToSave = $this->getCocktailIngredients($cocktail);
 
         if ($ingredientsToSave) {
             foreach ($ingredientsToSave as $ingredient) {
-                //        $cocktailIngredientRelationship = new CocktailIngredientRelationship;
+                $cocktailIngredientRelationship = new DrinkIngredientRelationship();
 
-                $cocktailIngredientRelationship->cocktail_id = $newCocktail->id;
-                $cocktailIngredientRelationship->ingredient_id = $this->getIngredientID($ingredient);
-                $cocktailIngredientRelationship->measure = $ingredient->measure;
+                $cocktailIngredientRelationship->drinkID = $newCocktail->id ?? '';
+                $cocktailIngredientRelationship->ingredientID = $this->getIngredientID($ingredient) ?? '';
+                $cocktailIngredientRelationship->amount = $ingredient['amount'] ?? '';
+                $cocktailIngredientRelationship->unit = $ingredient->unit ?? '';
+
+                $cocktailIngredientRelationship->save();
             }
         }
     }
 
-    private function saveCocktailTagRelationship($cocktail) {
-        $tags = preg_split(",", $cocktail->strTags);
+    private function saveTag($allTags, $tag)
+    {
+        if (!array_key_exists($tag, $allTags)) {
+            $newTag = new Tag;
 
-        if ($tags) {
+            $newTag->name = $tag;
+            $newTag->save();
+
+            return $newTag;
+        }
+
+        return false;
+    }
+
+    private function saveCocktailTagRelationship($newCocktail, $cocktail)
+    {
+        $tags = explode(',', $cocktail['strTags']);
+        $allTags = $this->getAllTags();
+
+        if (!empty($tags)) {
             foreach ($tags as $tag) {
-//                $newTag = new Tag;
+                if (!empty($allTags)) {
+                    $newTag = $this->saveTag($allTags, $tag);
+                    if ($newTag) {
+                        $tagRelation = new \CreateTagsDrinkRelationTable();
 
-                $tag->name = $tag;
-                $tag->save();
+                        $tagRelation->drinkID = $newCocktail->id;
+                        $tagRelation->tagID = $newTag->id;
+                    }
+                }
             }
         }
     }
 
-    private function getCocktailIngredients($cocktail) {
+    private function getCocktailIngredients($cocktail)
+    {
         $ingredientsToSave = [];
 
-        if ($cocktail->strIngredient1) {
-            array_push($ingredientsToSave, ['name' => $cocktail->strIngredient1, 'measure' => $cocktail->strMeasure1]);
+        if ($cocktail['strIngredient1']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient1'], 'amount' => $cocktail['strMeasure1']]);
         }
-        if ($cocktail->strIngredient2) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient2, $cocktail->strMeasure2]);
+        if ($cocktail['strIngredient2']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient2'], 'amount' => $cocktail['strMeasure2']]);
         }
-        if ($cocktail->strIngredient3) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient3, $cocktail->strMeasure3]);
+        if ($cocktail['strIngredient3']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient3'], 'amount' => $cocktail['strMeasure3']]);
         }
-        if ($cocktail->strIngredient4) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient4, $cocktail->strMeasure4]);
+        if ($cocktail['strIngredient4']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient4'], 'amount' => $cocktail['strMeasure4']]);
         }
-        if ($cocktail->strIngredient5) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient5, $cocktail->strMeasure5]);
+        if ($cocktail['strIngredient5']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient5'], 'amount' => $cocktail['strMeasure5']]);
         }
-        if ($cocktail->strIngredient6) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient6, $cocktail->strMeasure6]);
+        if ($cocktail['strIngredient6']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient6'], 'amount' => $cocktail['strMeasure6']]);
         }
-        if ($cocktail->strIngredient7) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient7, $cocktail->strMeasure7]);
+        if ($cocktail['strIngredient7']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient7'], 'amount' => $cocktail['strMeasure7']]);
         }
-        if ($cocktail->strIngredient8) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient8, $cocktail->strMeasure8]);
+        if ($cocktail['strIngredient8']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient8'], 'amount' => $cocktail['strMeasure8']]);
         }
-        if ($cocktail->strIngredient9) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient9, $cocktail->strMeasure9]);
+        if ($cocktail['strIngredient9']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient9'], 'amount' => $cocktail['strMeasure9']]);
         }
-        if ($cocktail->strIngredient10) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient10, $cocktail->strMeasure10]);
+        if ($cocktail['strIngredient10']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient10'], 'amount' => $cocktail['strMeasure10']]);
         }
-        if ($cocktail->strIngredient11) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient11, $cocktail->strMeasure11]);
+        if ($cocktail['strIngredient11']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient11'], 'amount' => $cocktail['strMeasure11']]);
         }
-        if ($cocktail->strIngredient12) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient12, $cocktail->strMeasure12]);
+        if ($cocktail['strIngredient12']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient12'], 'amount' => $cocktail['strMeasure12']]);
         }
-        if ($cocktail->strIngredient13) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient13, $cocktail->strMeasure13]);
+        if ($cocktail['strIngredient13']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient13'], 'amount' => $cocktail['strMeasure13']]);
         }
-        if ($cocktail->strIngredient14) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient14, $cocktail->strMeasure14]);
+        if ($cocktail['strIngredient14']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient14'], 'amount' => $cocktail['strMeasure14']]);
         }
-        if ($cocktail->strIngredient15) {
-            array_push($ingredientsToSave, [$cocktail->strIngredient15, $cocktail->strMeasure15]);
+        if ($cocktail['strIngredient15']) {
+            array_push($ingredientsToSave, ['name' => $cocktail['strIngredient15'], 'amount' => $cocktail['strMeasure15']]);
         }
 
         return $ingredientsToSave;
+    }
+
+    private function capatalizeWords($word)
+    {
+        return implode(
+            ' ',
+            array_map(
+                'ucfirst',
+                array_map(
+                    'strtolower',
+                    explode(' ',
+                        trim($word)
+                    )
+                )
+            )
+        );
+    }
+
+    private function deleteCocktailIngredientRelations($drinkID) {
+        $this->cocktailRepository->deleteCocktailIngredientRelations($drinkID);
     }
 }

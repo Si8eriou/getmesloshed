@@ -4,80 +4,47 @@
 namespace App\Repositories\Cocktail;
 
 
-use GuzzleHttp\Client;
+use App\Models\Category;
+use App\Models\Drink;
+use App\Models\DrinkIngredientRelationship;
+use App\Models\Glass;
+use App\Models\Ingredient;
+use App\Models\Tag;
 
 class CocktailRepository
 {
     public function getAllDrinkCategories() {
-        $client = new Client();
-        $url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list';
-
-        $response = $client->request('GET', $url, []);
-
-        return $response->getBody()->getContents();
+        return json_decode(Category::all()->keyBy('name'), 1);
     }
 
     public function getAllDrinkGlasses() {
-        $client = new Client();
-        $url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list';
-
-        $response = $client->request('GET', $url, []);
-
-        return $response->getBody()->getContents();
+        return json_decode(Glass::all()->keyBy('name'), 1);
     }
 
     public function getAllDrinkIngredients() {
-        $client = new Client();
-        $url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list';
-
-        $response = $client->request('GET', $url, []);
-
-        return $response->getBody()->getContents();
+        return json_decode(Ingredient::all()->keyBy('name'), 1);
     }
 
     public function getDrinkAlcoholicTypes() {
-        $client = new Client();
-        $url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list';
-
-        $response = $client->request('GET', $url, []);
-
-        return $response->getBody()->getContents();
+        return json_decode(Category::all()->keyBy('name'), 1);
     }
 
     public function getAllCocktails() {
-        $cocktails = [];
-        $client = new Client();
-        $url = 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a';
-
-//        foreach(range('a', 'z') as $letter) {
-//            $url = $url . $letter;
-        $response = $client->request('GET', $url, []);
-        $response = json_decode($response->getBody()->getContents(), 1);
-        array_push($cocktails, ['a' => $response]);
-//        }
-
-        dd($cocktails, count($cocktails));
-
-        return $cocktails;
+        return json_decode(Drink::all()->keyBy('name'), 1);
     }
 
-//    public function getAllDrinkCategories() {
-//
-//    }
-//
-//    public function getAllDrinkGlasses() {
-//
-//    }
-//
-//    public function getAllDrinkIngredients() {
-//
-//    }
-//
-//    public function getDrinkAlcoholicTypes() {
-//
-//    }
-//
-//    public function getAllCocktails() {
-//
-//    }
+    public function getAllTags() {
+        return json_decode(Tag::all()->keyBy('name'), 1);
+    }
+
+    public function deleteCocktailIngredientRelations($drinkID) {
+        $ingredients = DrinkIngredientRelationship::where('drinkID', $drinkID)
+            ->get();
+
+        if (!empty($ingredients)) {
+            foreach ($ingredients as $ingredient) {
+                $ingredient->delete();
+            }
+        }
+    }
 }

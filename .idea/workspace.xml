@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e2cfe40-dfab-4613-ae55-560b0f86db93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/getmesloshed.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/getmesloshed.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app" beforeDir="false" afterPath="$PROJECT_DIR$/app" afterDir="false" />
@@ -18,12 +17,6 @@
       <change beforePath="$PROJECT_DIR$/app/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/environments/environment.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/Cocktail/CocktailParserController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Repositories/Cocktail/CocktailParserRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +177,8 @@
       <updated>1601671121712</updated>
       <workItem from="1601671122735" duration="7983000" />
       <workItem from="1602278118679" duration="16000" />
-      <workItem from="1602860894324" duration="16183000" />
+      <workItem from="1602860894324" duration="16809000" />
+      <workItem from="1603237010825" duration="3403000" />
     </task>
     <servers />
   </component>

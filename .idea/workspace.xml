@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e2cfe40-dfab-4613-ae55-560b0f86db93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/angular/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/angular/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/angular/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/angular/polyfills.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/polyfills.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/angular/polyfills.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/polyfills.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/angular/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/styles.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/angular/styles.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/styles.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +25,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/app" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -187,10 +195,10 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2838" y="377" width="786" height="719" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1602872603030" />
-    <state x="2597" y="327" width="1267" height="819" key="NewPhpClassDialog" timestamp="1602873273291">
+    <state x="2597" y="327" width="1267" height="819" key="NewPhpClassDialog" timestamp="1603752261163">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2597" y="327" width="1267" height="819" key="NewPhpClassDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1602873273291" />
+    <state x="2597" y="327" width="1267" height="819" key="NewPhpClassDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1603752261163" />
     <state x="2953" y="624" width="555" height="226" key="NewPhpFileDialog" timestamp="1602863738731">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -199,13 +207,13 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2827" y="160" width="808" height="1154" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1601675986554" />
-    <state x="2793" y="311" width="885" height="844" key="find.popup" timestamp="1602870797931">
+    <state x="2793" y="311" width="885" height="844" key="find.popup" timestamp="1603752091110">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2793" y="311" width="885" height="844" key="find.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1602870797931" />
-    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup" timestamp="1602866935657">
+    <state x="2793" y="311" width="885" height="844" key="find.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1603752091110" />
+    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup" timestamp="1603752174193">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1602866935657" />
+    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1603752174193" />
   </component>
 </project>

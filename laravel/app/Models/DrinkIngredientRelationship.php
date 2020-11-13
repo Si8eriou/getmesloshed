@@ -13,6 +13,10 @@ class DrinkIngredientRelationship extends Model
     public $timestamps = false;
 
     protected $fillable = [
-      'drinkID', 'glassID', 'amount', 'unit'
+      'drinkID', 'ingredientID', 'amount', 'unit'
     ];
+
+    public function ingredient() {
+        return $this->hasOne(Ingredient::class, 'id', 'ingredientID');
+    }
 }

@@ -17,4 +17,8 @@ class Drink extends Model
     protected $fillable = [
       'glassID', 'categoryID', 'instruction'
     ];
+
+    public function ingredientsRelationship() {
+        return $this->hasMany(DrinkIngredientRelationship::class, 'drinkID');
+    }
 }

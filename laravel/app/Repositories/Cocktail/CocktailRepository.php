@@ -13,31 +13,57 @@ use App\Models\Tag;
 
 class CocktailRepository
 {
-    public function getAllDrinkCategories() {
-        return json_decode(Category::all()->keyBy('name'), 1);
+
+    public function getAllDrinks()
+    {
+        return Drink::all()->keyBy('name');
     }
 
-    public function getAllDrinkGlasses() {
-        return json_decode(Glass::all()->keyBy('name'), 1);
+    public function getAllDrinksNames()
+    {
+        return Drink::all()->sortBy('name')->pluck('name');
     }
 
-    public function getAllDrinkIngredients() {
-        return json_decode(Ingredient::all()->keyBy('name'), 1);
+    public function getDrinkByID($drinkID)
+    {
+        return Drink::find('id', $drinkID);
     }
 
-    public function getDrinkAlcoholicTypes() {
-        return json_decode(Category::all()->keyBy('name'), 1);
+    public function searchDrinkByName($search)
+    {
+        //TODO: search drink by name
     }
 
-    public function getAllCocktails() {
-        return json_decode(Drink::all()->keyBy('name'), 1);
+    public function getRandomDrinks()
+    {
+        return Drink::inRandomOrder()->limit(5)->get();
     }
 
-    public function getAllTags() {
-        return json_decode(Tag::all()->keyBy('name'), 1);
+    public function getDrinksByGlass($glassID)
+    {
+        return Drink::where('glassID', $glassID)->get();
     }
 
-    public function deleteCocktailIngredientRelations($drinkID) {
+    public function getDrinksByIngredient($drinkID, $ingredientID)
+    {
+        return Drink::where('id', $drinkID)
+            ->where('ingredientsRelationship.ingredient')
+            ->get();
+    }
+
+    public function getDrinksByIngredients($ingredients)
+    {
+        //TODO: drinks by ingredients
+    }
+
+    public function getDrinksByCategory($categoryID)
+    {
+        return Drink::where('categoryID', $categoryID)->get();
+    }
+
+
+    public function deleteCocktailIngredientRelations($drinkID)
+    {
         $ingredients = DrinkIngredientRelationship::where('drinkID', $drinkID)
             ->get();
 

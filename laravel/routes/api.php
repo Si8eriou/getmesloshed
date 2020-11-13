@@ -21,3 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['prefix' => 'cocktail'], function () {
     Route::get('doSomething', 'App\Http\Controllers\Cocktail\CocktailController@doParser');
 });
+
+Route::group(['prefix' => 'search'], function () {
+    Route::get('getSearchInfo', 'App\Http\Controllers\Search\SearchController@getSearchInfo');
+});

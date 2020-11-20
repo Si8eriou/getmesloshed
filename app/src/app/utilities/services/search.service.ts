@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
-import {map} from 'rxjs/operators';
+import {map, skipWhile, take} from 'rxjs/operators';
 import {Router} from "@angular/router";
 import {Store} from "@ngrx/store";
 import * as fromRoot from "../../store/reducers";
@@ -26,7 +26,13 @@ export class SearchService {
   }
 
   search(searchParams) {
-    this.store.select(fromRoot.getSearchInfo);
+    let url = `${this.urlApi}/search`;
+
+    return this.http.get(url, {
+      params: {
+        searchParams: searchParams.payload
+      }
+    });
   }
 
 }

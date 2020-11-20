@@ -18,7 +18,19 @@ class Drink extends Model
       'glassID', 'categoryID', 'instruction'
     ];
 
-    public function ingredientsRelationship() {
+    public function ingredients() {
         return $this->hasMany(DrinkIngredientRelationship::class, 'drinkID');
+    }
+
+    public function tags() {
+        return $this->hasMany(DrinkTagRelationship::class, 'drinkID');
+    }
+
+    public function glass() {
+        return $this->belongsTo(Glass::class, 'glassID', 'id');
+    }
+
+    public function category() {
+        return $this->belongsTo(Category::class, 'categoryID', 'id');
     }
 }

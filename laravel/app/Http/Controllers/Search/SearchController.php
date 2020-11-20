@@ -16,8 +16,8 @@ use Illuminate\Http\Request;
 class SearchController extends Controller
 {
     public function getSearchInfo(Request $request, CocktailRepository $cocktailRepository,
-                                   IngredientRepository $ingredientRepository, GlassRepository $glassRepository,
-                                   CategoryRepository $categoryRepository, TagRepository $tagRepository)
+                                  IngredientRepository $ingredientRepository, GlassRepository $glassRepository,
+                                  CategoryRepository $categoryRepository, TagRepository $tagRepository)
     {
         $allDrinkInformation = $cocktailRepository->getAllDrinksNames();
         $allIngredients = $ingredientRepository->getAllIngredientsNames();
@@ -33,5 +33,10 @@ class SearchController extends Controller
         sort($info);
 
         return json_encode($info, 1);
+    }
+
+    public function search(Request $request, SearchRepository $searchRepository)
+    {
+        return $searchRepository->search($request->get('searchParams'));
     }
 }

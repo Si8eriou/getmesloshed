@@ -49,7 +49,7 @@ CommonComponentsRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__
 /*!**************************************************!*\
   !*** ./src/app/store/reducers/search.reducer.ts ***!
   \**************************************************/
-/*! exports provided: searchFeatureKey, initialState, reducer, getSearchInfo */
+/*! exports provided: searchFeatureKey, initialState, reducer, getSearchInfo, getSearchResults */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -58,6 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchInfo", function() { return getSearchInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchResults", function() { return getSearchResults; });
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
 /* harmony import */ var _actions_search_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/search.actions */ "fwzw");
 
@@ -65,15 +66,18 @@ __webpack_require__.r(__webpack_exports__);
 const searchFeatureKey = 'search';
 const initialState = {
     loading: false,
-    searchInfo: ['test', 'this', 'is'],
+    searching: false,
+    searchInfo: [],
     searchInfoSuccessful: false,
     searchInfoFailed: false,
+    search: false,
 };
-const searchReducer = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createReducer"])(initialState, Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformation"], (state, action) => (Object.assign(Object.assign({}, state), { loading: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformationSuccessful"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, searchInfo: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformationFailed"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, searchInfoFailed: action.error }))));
+const searchReducer = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createReducer"])(initialState, Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformation"], (state, action) => (Object.assign(Object.assign({}, state), { loading: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformationSuccessful"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, searchInfo: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformationFailed"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, searchInfoFailed: action.error }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["search"], (state, action) => (Object.assign(Object.assign({}, state), { searching: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["searchSuccessful"], (state, action) => (Object.assign(Object.assign({}, state), { searching: false, search: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["searchFailed"], (state, action) => (Object.assign(Object.assign({}, state), { searching: false, search: action.error }))));
 function reducer(state, action) {
     return searchReducer(state, action);
 }
 const getSearchInfo = (state) => state.searchInfo;
+const getSearchResults = (state) => state.search;
 
 
 /***/ }),
@@ -298,6 +302,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_reducers__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./store/reducers */ "tg95");
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @ngrx/effects */ "9jGm");
 /* harmony import */ var _store_effects_search_effects__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./store/effects/search.effects */ "d7ma");
+/* harmony import */ var _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @ngrx/store-devtools */ "agSv");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ../environments/environment */ "AytR");
+
+
+
 
 
 
@@ -371,7 +380,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             }),
             _ngrx_effects__WEBPACK_IMPORTED_MODULE_28__["EffectsModule"].forRoot([
                 _store_effects_search_effects__WEBPACK_IMPORTED_MODULE_29__["searchEffects"]
-            ])
+            ]),
+            _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_30__["StoreDevtoolsModule"].instrument({ maxAge: 25, logOnly: _environments_environment__WEBPACK_IMPORTED_MODULE_31__["environment"].production })
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _navigation_navigation_component__WEBPACK_IMPORTED_MODULE_6__["NavigationComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -400,7 +410,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _angular_material_dialog__WEBPACK_IMPORTED_MODULE_21__["MatDialogModule"],
         _angular_material_chips__WEBPACK_IMPORTED_MODULE_24__["MatChipsModule"],
         _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_25__["MatAutocompleteModule"],
-        _home_home_module__WEBPACK_IMPORTED_MODULE_23__["HomeModule"], _ngrx_store__WEBPACK_IMPORTED_MODULE_26__["StoreRootModule"], _ngrx_effects__WEBPACK_IMPORTED_MODULE_28__["EffectsRootModule"]] }); })();
+        _home_home_module__WEBPACK_IMPORTED_MODULE_23__["HomeModule"], _ngrx_store__WEBPACK_IMPORTED_MODULE_26__["StoreRootModule"], _ngrx_effects__WEBPACK_IMPORTED_MODULE_28__["EffectsRootModule"], _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_30__["StoreDevtoolsModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -445,7 +455,8 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     }),
                     _ngrx_effects__WEBPACK_IMPORTED_MODULE_28__["EffectsModule"].forRoot([
                         _store_effects_search_effects__WEBPACK_IMPORTED_MODULE_29__["searchEffects"]
-                    ])
+                    ]),
+                    _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_30__["StoreDevtoolsModule"].instrument({ maxAge: 25, logOnly: _environments_environment__WEBPACK_IMPORTED_MODULE_31__["environment"].production })
                 ],
                 providers: [],
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
@@ -470,14 +481,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _store_actions_search_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../store/actions/search.actions */ "fwzw");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
-/* harmony import */ var _utilities_services_search_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../utilities/services/search.service */ "lM4S");
-/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/form-field */ "kmnG");
-/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/material/chips */ "A5z7");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common */ "ofXK");
-/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/autocomplete */ "/1cH");
-/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
-/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/core */ "FKr1");
+/* harmony import */ var _store_reducers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../store/reducers */ "tg95");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
+/* harmony import */ var _utilities_services_search_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utilities/services/search.service */ "lM4S");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/material/form-field */ "kmnG");
+/* harmony import */ var _angular_material_chips__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/material/chips */ "A5z7");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @angular/material/autocomplete */ "/1cH");
+/* harmony import */ var _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @angular/material/icon */ "NFeN");
+/* harmony import */ var _angular_material_core__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material/core */ "FKr1");
+
+
 
 
 
@@ -527,16 +542,17 @@ function HomeComponent_mat_option_13_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", option_r9, " ");
 } }
 class HomeComponent {
-    constructor(store, searchService) {
+    constructor(store, searchService, router) {
         this.store = store;
         this.searchService = searchService;
+        this.router = router;
         this.separatorKeysCodes = [_angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["ENTER"], _angular_cdk_keycodes__WEBPACK_IMPORTED_MODULE_1__["COMMA"]];
         this.searchCtrl = new _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControl"]();
         this.searchList = [];
         this.list = [];
         this.removable = true;
         this.selectable = true;
-        this.filteredThing = this.searchCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((fruit) => fruit ? this._filter(fruit) : this.list.slice()));
+        this.filteredThing = this.searchCtrl.valueChanges.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["startWith"])(null), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])((param) => param ? this._filter(param) : this.list.slice()));
     }
     ngOnInit() {
         this.setUpSearch();
@@ -562,6 +578,7 @@ class HomeComponent {
         this.searchList.push(event.option.viewValue);
         this.searchInput.nativeElement.value = '';
         this.searchCtrl.setValue(null);
+        this.search();
     }
     _filter(value) {
         const filterValue = value.toLowerCase();
@@ -569,13 +586,16 @@ class HomeComponent {
     }
     setUpSearch() {
         this.store.dispatch(_store_actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["setupSearchInformation"]());
+        this.store.select(_store_reducers__WEBPACK_IMPORTED_MODULE_5__["getSearchInfo"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["skipWhile"])((info) => info.length === 0), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe((info) => {
+            this.list = info;
+        });
     }
     search() {
-        console.log(this.searchList);
-        this.searchService.search(this.searchList);
+        this.store.dispatch(_store_actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["search"]({ payload: this.searchList }));
+        this.router.navigate(['/search-results']);
     }
 }
-HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_5__["Store"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_utilities_services_search_service__WEBPACK_IMPORTED_MODULE_6__["SearchService"])); };
+HomeComponent.ɵfac = function HomeComponent_Factory(t) { return new (t || HomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_6__["Store"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_utilities_services_search_service__WEBPACK_IMPORTED_MODULE_7__["SearchService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"])); };
 HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: HomeComponent, selectors: [["app-home"]], viewQuery: function HomeComponent_Query(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c0, true);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵviewQuery"](_c1, true);
@@ -619,7 +639,7 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("formControl", ctx.searchCtrl)("matAutocomplete", _r3)("matChipInputFor", _r0)("matChipInputSeparatorKeyCodes", ctx.separatorKeysCodes);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](14, 6, ctx.filteredThing));
-    } }, directives: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_7__["MatFormField"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_8__["MatChipList"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_10__["MatAutocompleteTrigger"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_8__["MatChipInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlDirective"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_10__["MatAutocomplete"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_8__["MatChip"], _angular_common__WEBPACK_IMPORTED_MODULE_9__["NgIf"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_11__["MatIcon"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_8__["MatChipRemove"], _angular_material_core__WEBPACK_IMPORTED_MODULE_12__["MatOption"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_9__["AsyncPipe"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIn0= */"] });
+    } }, directives: [_angular_material_form_field__WEBPACK_IMPORTED_MODULE_9__["MatFormField"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_10__["MatChipList"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["NgForOf"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["DefaultValueAccessor"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_12__["MatAutocompleteTrigger"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_10__["MatChipInput"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["NgControlStatus"], _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormControlDirective"], _angular_material_autocomplete__WEBPACK_IMPORTED_MODULE_12__["MatAutocomplete"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_10__["MatChip"], _angular_common__WEBPACK_IMPORTED_MODULE_11__["NgIf"], _angular_material_icon__WEBPACK_IMPORTED_MODULE_13__["MatIcon"], _angular_material_chips__WEBPACK_IMPORTED_MODULE_10__["MatChipRemove"], _angular_material_core__WEBPACK_IMPORTED_MODULE_14__["MatOption"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_11__["AsyncPipe"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWUvaG9tZS9ob21lLmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HomeComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -627,7 +647,7 @@ HomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 templateUrl: './home.component.html',
                 styleUrls: ['./home.component.scss']
             }]
-    }], function () { return [{ type: _ngrx_store__WEBPACK_IMPORTED_MODULE_5__["Store"] }, { type: _utilities_services_search_service__WEBPACK_IMPORTED_MODULE_6__["SearchService"] }]; }, { searchInput: [{
+    }], function () { return [{ type: _ngrx_store__WEBPACK_IMPORTED_MODULE_6__["Store"] }, { type: _utilities_services_search_service__WEBPACK_IMPORTED_MODULE_7__["SearchService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_8__["Router"] }]; }, { searchInput: [{
             type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"],
             args: ['searchInput']
         }], matAutocomplete: [{
@@ -738,6 +758,7 @@ class searchEffects {
         this.actions$ = actions$;
         this.searchService = searchService;
         this.getSearchInfo$ = Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["createEffect"])(() => this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["ofType"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["setupSearchInformation"].type), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])((action) => this.searchService.setUpSearch()), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])((response) => _actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["setupSearchInformationSuccessful"]({ payload: response })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])((error) => Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["setupSearchInformationFailed"]({ error })))));
+        this.search$ = Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["createEffect"])(() => this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["ofType"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["search"].type), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["switchMap"])((params) => this.searchService.search(params)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])((response) => _actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["searchSuccessful"]({ payload: response })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])((error) => Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["searchFailed"]({ error })))));
     }
 }
 searchEffects.ɵfac = function searchEffects_Factory(t) { return new (t || searchEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Actions"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_utilities_services_search_service__WEBPACK_IMPORTED_MODULE_5__["SearchService"])); };
@@ -836,7 +857,7 @@ CommonComponentsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
 /*!*************************************************!*\
   !*** ./src/app/store/actions/search.actions.ts ***!
   \*************************************************/
-/*! exports provided: setupSearchInformation, setupSearchInformationSuccessful, setupSearchInformationFailed */
+/*! exports provided: setupSearchInformation, setupSearchInformationSuccessful, setupSearchInformationFailed, search, searchSuccessful, searchFailed */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -844,11 +865,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setupSearchInformation", function() { return setupSearchInformation; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setupSearchInformationSuccessful", function() { return setupSearchInformationSuccessful; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setupSearchInformationFailed", function() { return setupSearchInformationFailed; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "search", function() { return search; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchSuccessful", function() { return searchSuccessful; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchFailed", function() { return searchFailed; });
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
 
 const setupSearchInformation = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])('[Search] set up search information');
 const setupSearchInformationSuccessful = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])('[Search] set up search information successful', Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["props"])());
 const setupSearchInformationFailed = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])('[Search] set up search information failed', Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["props"])());
+const search = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])('[Search] search for params', Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["props"])());
+const searchSuccessful = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])('[Search] search for params successful', Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["props"])());
+const searchFailed = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])('[Search] search for params failed', Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["props"])());
 
 
 /***/ }),
@@ -966,11 +993,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchService", function() { return SearchService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../environments/environment */ "AytR");
-/* harmony import */ var _store_reducers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../store/reducers */ "tg95");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
-
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
 
 
 
@@ -989,17 +1014,22 @@ class SearchService {
         return this.http.get(url);
     }
     search(searchParams) {
-        this.store.select(_store_reducers__WEBPACK_IMPORTED_MODULE_2__["getSearchInfo"]);
+        let url = `${this.urlApi}/search`;
+        return this.http.get(url, {
+            params: {
+                searchParams: searchParams.payload
+            }
+        });
     }
 }
-SearchService.ɵfac = function SearchService_Factory(t) { return new (t || SearchService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_5__["Store"])); };
+SearchService.ɵfac = function SearchService_Factory(t) { return new (t || SearchService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["Store"])); };
 SearchService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: SearchService, factory: SearchService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SearchService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }, { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_5__["Store"] }]; }, null); })();
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }, { type: _ngrx_store__WEBPACK_IMPORTED_MODULE_4__["Store"] }]; }, null); })();
 
 
 /***/ }),
@@ -1061,7 +1091,7 @@ SideNavigationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
 /*!*****************************************!*\
   !*** ./src/app/store/reducers/index.ts ***!
   \*****************************************/
-/*! exports provided: reducers, search, getSearchInfo, metaReducers */
+/*! exports provided: reducers, search, getSearchInfo, getSearchResults, metaReducers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1069,6 +1099,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducers", function() { return reducers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "search", function() { return search; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchInfo", function() { return getSearchInfo; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchResults", function() { return getSearchResults; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "metaReducers", function() { return metaReducers; });
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../environments/environment */ "AytR");
@@ -1081,6 +1112,7 @@ const reducers = {
 };
 const search = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createFeatureSelector"])(_search_reducer__WEBPACK_IMPORTED_MODULE_2__["searchFeatureKey"]);
 const getSearchInfo = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(search, _search_reducer__WEBPACK_IMPORTED_MODULE_2__["getSearchInfo"]);
+const getSearchResults = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(search, _search_reducer__WEBPACK_IMPORTED_MODULE_2__["getSearchResults"]);
 const metaReducers = !_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].production ? [] : [];
 
 
@@ -1111,6 +1143,10 @@ const routes = [
     {
         path: 'home',
         loadChildren: './home/home.module#HomeModule',
+    },
+    {
+        path: 'search-results',
+        loadChildren: './search-results/search-results.module#SearchResultsModule'
     }
 ];
 class AppRoutingModule {

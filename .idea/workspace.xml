@@ -8,14 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/styles.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/styles.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/styles.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/styles.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/Cocktail/CocktailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/Cocktail/CocktailController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/Search/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/Search/SearchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/app/Models/Drink.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Models/Drink.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Models/DrinkIngredientRelationship.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Models/DrinkIngredientRelationship.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Repositories/Cocktail/CocktailRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Repositories/Cocktail/CocktailRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Repositories/Search/SearchRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Repositories/Search/SearchRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ubuntu-bionic-18.04-cloudimg-console.log" beforeDir="false" afterPath="$PROJECT_DIR$/ubuntu-bionic-18.04-cloudimg-console.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -163,6 +161,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/app/store" />
       <recent name="$PROJECT_DIR$/laravel/app/Repositories/Cocktail" />
       <recent name="$PROJECT_DIR$/laravel/app/Repositories" />
     </key>
@@ -183,7 +182,11 @@
       <workItem from="1604529880895" duration="504000" />
       <workItem from="1604530647721" duration="1227000" />
       <workItem from="1605223729784" duration="5719000" />
-      <workItem from="1605284439281" duration="1449000" />
+      <workItem from="1605284439281" duration="18328000" />
+      <workItem from="1605552192698" duration="1945000" />
+      <workItem from="1605566870932" duration="4711000" />
+      <workItem from="1605635930244" duration="46000" />
+      <workItem from="1605899566956" duration="311000" />
     </task>
     <servers />
   </component>
@@ -199,18 +202,22 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2731" y="382" width="1009" height="715" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1602881110945" />
+    <state x="2950" y="318" width="561" height="837" key="#com.intellij.ide.util.MemberChooser" timestamp="1605293532715">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2950" y="318" width="561" height="837" key="#com.intellij.ide.util.MemberChooser/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605293532715" />
     <state x="2967" y="461" width="517" height="560" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1602867405044">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2967" y="461" width="517" height="560" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1602867405044" />
-    <state x="2838" y="377" width="786" height="719" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1602872603030">
+    <state x="2838" y="377" width="786" height="719" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605302187299">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2838" y="377" width="786" height="719" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1602872603030" />
-    <state x="2597" y="327" width="1300" height="819" key="NewPhpClassDialog" timestamp="1604516814527">
+    <state x="2838" y="377" width="786" height="719" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605302187299" />
+    <state x="2597" y="327" width="1300" height="819" key="NewPhpClassDialog" timestamp="1605299502790">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2597" y="327" width="1300" height="819" key="NewPhpClassDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1604516814527" />
+    <state x="2597" y="327" width="1300" height="819" key="NewPhpClassDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605299502790" />
     <state x="2953" y="624" width="555" height="226" key="NewPhpFileDialog" timestamp="1604516807511">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
@@ -219,13 +226,13 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2827" y="160" width="808" height="1154" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1601675986554" />
-    <state x="2793" y="311" width="885" height="844" key="find.popup" timestamp="1603752091110">
+    <state x="2793" y="311" width="885" height="844" key="find.popup" timestamp="1605305018857">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2793" y="311" width="885" height="844" key="find.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1603752091110" />
-    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup" timestamp="1605227364638">
+    <state x="2793" y="311" width="885" height="844" key="find.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605305018857" />
+    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup" timestamp="1605569085183">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605227364638" />
+    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605569085183" />
   </component>
 </project>

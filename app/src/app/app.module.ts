@@ -30,6 +30,8 @@ import { reducers, metaReducers } from './store/reducers';
 
 import { EffectsModule } from '@ngrx/effects';
 import { searchEffects } from "./store/effects/search.effects";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -78,7 +80,9 @@ import { searchEffects } from "./store/effects/search.effects";
       [
         searchEffects
       ]
-    )
+    ),
+
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

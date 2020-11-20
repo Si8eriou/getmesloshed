@@ -16,6 +16,13 @@ export class searchEffects {
     catchError((error: string) => of(searchActions.setupSearchInformationFailed({error})))
   ));
 
+  search$ = createEffect(() => this.actions$.pipe(
+    ofType(searchActions.search.type),
+    switchMap((params: any) => this.searchService.search(params)),
+    map((response: any) => searchActions.searchSuccessful({payload: response})),
+    catchError((error: string) => of(searchActions.searchFailed({error})))
+  ));
+
   constructor(
     private actions$: Actions,
     private searchService: SearchService

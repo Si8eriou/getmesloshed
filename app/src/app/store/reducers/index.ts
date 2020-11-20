@@ -20,5 +20,6 @@ export const reducers: ActionReducerMap<State> = {
 
 export const search = createFeatureSelector<State, fromSearch.State>(fromSearch.searchFeatureKey);
 export const getSearchInfo = createSelector(search, fromSearch.getSearchInfo);
+export const getSearchResults = createSelector(search, fromSearch.getSearchResults);
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

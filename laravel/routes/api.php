@@ -23,5 +23,6 @@ Route::group(['prefix' => 'cocktail'], function () {
 });
 
 Route::group(['prefix' => 'search'], function () {
+    Route::get('search', 'App\Http\Controllers\Search\SearchController@search');
     Route::get('getSearchInfo', 'App\Http\Controllers\Search\SearchController@getSearchInfo');
 });

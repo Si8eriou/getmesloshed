@@ -4,11 +4,12 @@ import {MatChipInputEvent} from "@angular/material/chips";
 import {MatAutocomplete, MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {FormControl} from "@angular/forms";
 import {Observable} from 'rxjs';
-import {map, startWith} from 'rxjs/operators';
+import {map, skipWhile, startWith, take} from 'rxjs/operators';
 import {Store} from "@ngrx/store";
 import * as fromSearchActions from '../../store/actions/search.actions';
 import {SearchService} from "../../utilities/services/search.service";
 import * as fromRoot from "../../store/reducers";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -29,10 +30,10 @@ export class HomeComponent implements OnInit {
   @ViewChild('searchInput') searchInput: ElementRef<HTMLInputElement>;
   @ViewChild('searchAutoComplete') matAutocomplete: MatAutocomplete;
 
-  constructor(private store: Store, private searchService: SearchService) {
+  constructor(private store: Store, private searchService: SearchService, private router: Router) {
     this.filteredThing = this.searchCtrl.valueChanges.pipe(
       startWith(null),
-      map((fruit: string | null) => fruit ? this._filter(fruit) : this.list.slice()));
+      map((param: string | null) => param ? this._filter(param) : this.list.slice()));
   }
 
   ngOnInit(): void {
@@ -66,6 +67,7 @@ export class HomeComponent implements OnInit {
     this.searchList.push(event.option.viewValue);
     this.searchInput.nativeElement.value = '';
     this.searchCtrl.setValue(null);
+    this.search();
   }
 
   private _filter(value: string): string[] {
@@ -76,10 +78,18 @@ export class HomeComponent implements OnInit {
 
   setUpSearch() {
     this.store.dispatch(fromSearchActions.setupSearchInformation());
+
+    this.store.select(fromRoot.getSearchInfo).pipe(
+      skipWhile((info) => info.length === 0),
+      take(1)
+    ).subscribe((info) => {
+      this.list = info
+    })
   }
 
   search() {
-    console.log(this.searchList);
-    this.searchService.search(this.searchList);
+    this.store.dispatch(fromSearchActions.search({payload: this.searchList}));
+
+    this.router.navigate(['/search-results']);
   }
 }

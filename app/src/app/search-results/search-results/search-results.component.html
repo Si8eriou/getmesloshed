@@ -1,1 +1,5 @@
-<p>search-results works!</p>
+<div *ngFor="let drink of searchResults" style="overflow: hidden">
+  <div class="column">
+    <app-drink-view [drink]="drink"></app-drink-view>
+  </div>
+</div>

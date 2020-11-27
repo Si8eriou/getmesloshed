@@ -151,6 +151,60 @@ const environment = {
 
 /***/ }),
 
+/***/ "Hnkh":
+/*!***********************************************************************!*\
+  !*** ./src/app/drink/drink-view/drink-glass/drink-glass.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: DrinkGlassComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkGlassComponent", function() { return DrinkGlassComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
+
+
+
+function DrinkGlassComponent_li_2_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Glass: ", ctx_r0.drink.glass.name, "");
+} }
+class DrinkGlassComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DrinkGlassComponent.ɵfac = function DrinkGlassComponent_Factory(t) { return new (t || DrinkGlassComponent)(); };
+DrinkGlassComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkGlassComponent, selectors: [["app-drink-glass"]], inputs: { drink: "drink" }, decls: 3, vars: 1, consts: [[1, "panel__body"], [4, "ngIf"]], template: function DrinkGlassComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "ul");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, DrinkGlassComponent_li_2_Template, 2, 1, "li", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.drink == null ? null : ctx.drink.glass == null ? null : ctx.drink.glass.name);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RyaW5rL2RyaW5rLXZpZXcvZHJpbmstZ2xhc3MvZHJpbmstZ2xhc3MuY29tcG9uZW50LnNjc3MifQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkGlassComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-drink-glass',
+                templateUrl: './drink-glass.component.html',
+                styleUrls: ['./drink-glass.component.scss']
+            }]
+    }], function () { return []; }, { drink: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
+
+
+/***/ }),
+
 /***/ "JLYv":
 /*!****************************************************************!*\
   !*** ./src/app/common-components/icons/icon/icon.component.ts ***!
@@ -183,6 +237,188 @@ IconComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComp
                 styleUrls: ['./icon.component.scss']
             }]
     }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "KWMB":
+/*!*********************************************************************!*\
+  !*** ./src/app/drink/drink-view/drink-name/drink-name.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: DrinkNameComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkNameComponent", function() { return DrinkNameComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+const _c0 = ["*"];
+class DrinkNameComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DrinkNameComponent.ɵfac = function DrinkNameComponent_Factory(t) { return new (t || DrinkNameComponent)(); };
+DrinkNameComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkNameComponent, selectors: [["app-drink-name"]], inputs: { drink: "drink" }, ngContentSelectors: _c0, decls: 3, vars: 0, consts: [[1, "panel__header", "has-padding-y-2"], [1, "panel__header-title"]], template: function DrinkNameComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojectionDef"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵprojection"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RyaW5rL2RyaW5rLXZpZXcvZHJpbmstbmFtZS9kcmluay1uYW1lLmNvbXBvbmVudC5zY3NzIn0= */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkNameComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-drink-name',
+                templateUrl: './drink-name.component.html',
+                styleUrls: ['./drink-name.component.scss']
+            }]
+    }], function () { return []; }, { drink: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
+
+
+/***/ }),
+
+/***/ "OJPV":
+/*!***************************************!*\
+  !*** ./src/app/drink/drink.module.ts ***!
+  \***************************************/
+/*! exports provided: DrinkModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkModule", function() { return DrinkModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _drink_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./drink-routing.module */ "siNY");
+/* harmony import */ var _drink_form_drink_form_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./drink-form/drink-form.component */ "Pi9Y");
+/* harmony import */ var _drink_create_drink_create_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./drink-create/drink-create.component */ "cxaN");
+/* harmony import */ var _drink_view_drink_view_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./drink-view/drink-view.component */ "wNRM");
+/* harmony import */ var _drink_edit_drink_edit_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./drink-edit/drink-edit.component */ "pcs9");
+/* harmony import */ var _drink_view_drink_ingredient_list_drink_ingredient_list_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./drink-view/drink-ingredient-list/drink-ingredient-list.component */ "bBm7");
+/* harmony import */ var _drink_view_drink_image_drink_image_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./drink-view/drink-image/drink-image.component */ "tNGV");
+/* harmony import */ var _drink_view_drink_instructions_drink_instructions_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./drink-view/drink-instructions/drink-instructions.component */ "RIGJ");
+/* harmony import */ var _drink_view_drink_glass_drink_glass_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./drink-view/drink-glass/drink-glass.component */ "Hnkh");
+/* harmony import */ var _drink_view_drink_name_drink_name_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./drink-view/drink-name/drink-name.component */ "KWMB");
+
+
+
+
+
+
+
+
+
+
+
+
+
+class DrinkModule {
+}
+DrinkModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: DrinkModule });
+DrinkModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function DrinkModule_Factory(t) { return new (t || DrinkModule)(); }, imports: [[
+            _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+            _drink_routing_module__WEBPACK_IMPORTED_MODULE_2__["DrinkRoutingModule"]
+        ]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](DrinkModule, { declarations: [_drink_form_drink_form_component__WEBPACK_IMPORTED_MODULE_3__["DrinkFormComponent"], _drink_create_drink_create_component__WEBPACK_IMPORTED_MODULE_4__["DrinkCreateComponent"], _drink_view_drink_view_component__WEBPACK_IMPORTED_MODULE_5__["DrinkViewComponent"], _drink_edit_drink_edit_component__WEBPACK_IMPORTED_MODULE_6__["DrinkEditComponent"], _drink_view_drink_ingredient_list_drink_ingredient_list_component__WEBPACK_IMPORTED_MODULE_7__["DrinkIngredientListComponent"], _drink_view_drink_image_drink_image_component__WEBPACK_IMPORTED_MODULE_8__["DrinkImageComponent"], _drink_view_drink_instructions_drink_instructions_component__WEBPACK_IMPORTED_MODULE_9__["DrinkInstructionsComponent"], _drink_view_drink_glass_drink_glass_component__WEBPACK_IMPORTED_MODULE_10__["DrinkGlassComponent"], _drink_view_drink_name_drink_name_component__WEBPACK_IMPORTED_MODULE_11__["DrinkNameComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+        _drink_routing_module__WEBPACK_IMPORTED_MODULE_2__["DrinkRoutingModule"]], exports: [_drink_view_drink_view_component__WEBPACK_IMPORTED_MODULE_5__["DrinkViewComponent"]] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+                declarations: [_drink_form_drink_form_component__WEBPACK_IMPORTED_MODULE_3__["DrinkFormComponent"], _drink_create_drink_create_component__WEBPACK_IMPORTED_MODULE_4__["DrinkCreateComponent"], _drink_view_drink_view_component__WEBPACK_IMPORTED_MODULE_5__["DrinkViewComponent"], _drink_edit_drink_edit_component__WEBPACK_IMPORTED_MODULE_6__["DrinkEditComponent"], _drink_view_drink_ingredient_list_drink_ingredient_list_component__WEBPACK_IMPORTED_MODULE_7__["DrinkIngredientListComponent"], _drink_view_drink_image_drink_image_component__WEBPACK_IMPORTED_MODULE_8__["DrinkImageComponent"], _drink_view_drink_instructions_drink_instructions_component__WEBPACK_IMPORTED_MODULE_9__["DrinkInstructionsComponent"], _drink_view_drink_glass_drink_glass_component__WEBPACK_IMPORTED_MODULE_10__["DrinkGlassComponent"], _drink_view_drink_name_drink_name_component__WEBPACK_IMPORTED_MODULE_11__["DrinkNameComponent"]],
+                exports: [
+                    _drink_view_drink_view_component__WEBPACK_IMPORTED_MODULE_5__["DrinkViewComponent"]
+                ],
+                imports: [
+                    _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                    _drink_routing_module__WEBPACK_IMPORTED_MODULE_2__["DrinkRoutingModule"]
+                ]
+            }]
+    }], null, null); })();
+
+
+/***/ }),
+
+/***/ "Pi9Y":
+/*!**********************************************************!*\
+  !*** ./src/app/drink/drink-form/drink-form.component.ts ***!
+  \**********************************************************/
+/*! exports provided: DrinkFormComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkFormComponent", function() { return DrinkFormComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class DrinkFormComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DrinkFormComponent.ɵfac = function DrinkFormComponent_Factory(t) { return new (t || DrinkFormComponent)(); };
+DrinkFormComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkFormComponent, selectors: [["app-drink-form"]], decls: 2, vars: 0, template: function DrinkFormComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "drink-form works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RyaW5rL2RyaW5rLWZvcm0vZHJpbmstZm9ybS5jb21wb25lbnQuc2NzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkFormComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-drink-form',
+                templateUrl: './drink-form.component.html',
+                styleUrls: ['./drink-form.component.scss']
+            }]
+    }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "RIGJ":
+/*!*************************************************************************************!*\
+  !*** ./src/app/drink/drink-view/drink-instructions/drink-instructions.component.ts ***!
+  \*************************************************************************************/
+/*! exports provided: DrinkInstructionsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkInstructionsComponent", function() { return DrinkInstructionsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class DrinkInstructionsComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DrinkInstructionsComponent.ɵfac = function DrinkInstructionsComponent_Factory(t) { return new (t || DrinkInstructionsComponent)(); };
+DrinkInstructionsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkInstructionsComponent, selectors: [["app-drink-instructions"]], inputs: { drink: "drink" }, decls: 3, vars: 1, consts: [[1, "panel__body"]], template: function DrinkInstructionsComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.drink.instruction);
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RyaW5rL2RyaW5rLXZpZXcvZHJpbmstaW5zdHJ1Y3Rpb25zL2RyaW5rLWluc3RydWN0aW9ucy5jb21wb25lbnQuc2NzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkInstructionsComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-drink-instructions',
+                templateUrl: './drink-instructions.component.html',
+                styleUrls: ['./drink-instructions.component.scss']
+            }]
+    }], function () { return []; }, { drink: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
 
 
 /***/ }),
@@ -511,6 +747,81 @@ SearchResultsRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
 
 /***/ }),
 
+/***/ "bBm7":
+/*!*******************************************************************************************!*\
+  !*** ./src/app/drink/drink-view/drink-ingredient-list/drink-ingredient-list.component.ts ***!
+  \*******************************************************************************************/
+/*! exports provided: DrinkIngredientListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkIngredientListComponent", function() { return DrinkIngredientListComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
+
+
+
+function DrinkIngredientListComponent_div_1_ul_1_span_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "span");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ingredient_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2).$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("- ", ingredient_r1.amount, "");
+} }
+function DrinkIngredientListComponent_div_1_ul_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "ul");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "li");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, DrinkIngredientListComponent_div_1_ul_1_span_3_Template, 2, 1, "span", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ingredient_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("", ingredient_r1.ingredient.name, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ingredient_r1.amount);
+} }
+function DrinkIngredientListComponent_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, DrinkIngredientListComponent_div_1_ul_1_Template, 4, 2, "ul", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ingredient_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ingredient_r1 == null ? null : ingredient_r1.ingredient);
+} }
+class DrinkIngredientListComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DrinkIngredientListComponent.ɵfac = function DrinkIngredientListComponent_Factory(t) { return new (t || DrinkIngredientListComponent)(); };
+DrinkIngredientListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkIngredientListComponent, selectors: [["app-drink-ingredient-list"]], inputs: { drink: "drink" }, decls: 2, vars: 1, consts: [[1, "panel__body"], [4, "ngFor", "ngForOf"], [4, "ngIf"]], template: function DrinkIngredientListComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, DrinkIngredientListComponent_div_1_Template, 2, 1, "div", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.drink == null ? null : ctx.drink.ingredients);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgForOf"], _angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RyaW5rL2RyaW5rLXZpZXcvZHJpbmstaW5ncmVkaWVudC1saXN0L2RyaW5rLWluZ3JlZGllbnQtbGlzdC5jb21wb25lbnQuc2NzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkIngredientListComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-drink-ingredient-list',
+                templateUrl: './drink-ingredient-list.component.html',
+                styleUrls: ['./drink-ingredient-list.component.scss']
+            }]
+    }], function () { return []; }, { drink: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
+
+
+/***/ }),
+
 /***/ "cPhq":
 /*!*********************************************!*\
   !*** ./src/app/home/home/home.component.ts ***!
@@ -770,6 +1081,42 @@ HomeModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
                 providers: []
             }]
     }], null, null); })();
+
+
+/***/ }),
+
+/***/ "cxaN":
+/*!**************************************************************!*\
+  !*** ./src/app/drink/drink-create/drink-create.component.ts ***!
+  \**************************************************************/
+/*! exports provided: DrinkCreateComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkCreateComponent", function() { return DrinkCreateComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class DrinkCreateComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DrinkCreateComponent.ɵfac = function DrinkCreateComponent_Factory(t) { return new (t || DrinkCreateComponent)(); };
+DrinkCreateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkCreateComponent, selectors: [["app-drink-create"]], decls: 2, vars: 0, template: function DrinkCreateComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "drink-create works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RyaW5rL2RyaW5rLWNyZWF0ZS9kcmluay1jcmVhdGUuY29tcG9uZW50LnNjc3MifQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkCreateComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-drink-create',
+                templateUrl: './drink-create.component.html',
+                styleUrls: ['./drink-create.component.scss']
+            }]
+    }], function () { return []; }, null); })();
 
 
 /***/ }),
@@ -1094,11 +1441,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_reducers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../store/reducers */ "tg95");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _drink_drink_view_drink_view_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../drink/drink-view/drink-view.component */ "wNRM");
 
 
 
 
 
+
+
+function SearchResultsComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "app-drink-view", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const drink_r1 = ctx.$implicit;
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("drink", drink_r1);
+} }
 class SearchResultsComponent {
     constructor(store) {
         this.store = store;
@@ -1108,16 +1470,16 @@ class SearchResultsComponent {
     }
     getSearchResults() {
         this.store.select(_store_reducers__WEBPACK_IMPORTED_MODULE_1__["getSearchResults"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["skipWhile"])((result) => !result || result.length === 0), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["take"])(1)).subscribe((result) => {
-            console.log(result);
+            this.searchResults = result.data;
         });
     }
 }
 SearchResultsComponent.ɵfac = function SearchResultsComponent_Factory(t) { return new (t || SearchResultsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"])); };
-SearchResultsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SearchResultsComponent, selectors: [["app-search-results"]], decls: 2, vars: 0, template: function SearchResultsComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "search-results works!");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlYXJjaC1yZXN1bHRzL3NlYXJjaC1yZXN1bHRzL3NlYXJjaC1yZXN1bHRzLmNvbXBvbmVudC5zY3NzIn0= */"] });
+SearchResultsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SearchResultsComponent, selectors: [["app-search-results"]], decls: 1, vars: 1, consts: [["style", "overflow: hidden", 4, "ngFor", "ngForOf"], [2, "overflow", "hidden"], [1, "column"], [3, "drink"]], template: function SearchResultsComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, SearchResultsComponent_div_0_Template, 3, 1, "div", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.searchResults);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgForOf"], _drink_drink_view_drink_view_component__WEBPACK_IMPORTED_MODULE_5__["DrinkViewComponent"]], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlYXJjaC1yZXN1bHRzL3NlYXJjaC1yZXN1bHRzL3NlYXJjaC1yZXN1bHRzLmNvbXBvbmVudC5zY3NzIn0= */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SearchResultsComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1126,6 +1488,42 @@ SearchResultsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
                 styleUrls: ['./search-results.component.scss']
             }]
     }], function () { return [{ type: _ngrx_store__WEBPACK_IMPORTED_MODULE_3__["Store"] }]; }, null); })();
+
+
+/***/ }),
+
+/***/ "pcs9":
+/*!**********************************************************!*\
+  !*** ./src/app/drink/drink-edit/drink-edit.component.ts ***!
+  \**********************************************************/
+/*! exports provided: DrinkEditComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkEditComponent", function() { return DrinkEditComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class DrinkEditComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DrinkEditComponent.ɵfac = function DrinkEditComponent_Factory(t) { return new (t || DrinkEditComponent)(); };
+DrinkEditComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkEditComponent, selectors: [["app-drink-edit"]], decls: 2, vars: 0, template: function DrinkEditComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "drink-edit works!");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2RyaW5rL2RyaW5rLWVkaXQvZHJpbmstZWRpdC5jb21wb25lbnQuc2NzcyJ9 */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkEditComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-drink-edit',
+                templateUrl: './drink-edit.component.html',
+                styleUrls: ['./drink-edit.component.scss']
+            }]
+    }], function () { return []; }, null); })();
 
 
 /***/ }),
@@ -1179,6 +1577,80 @@ SideNavigationComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵ
                 styleUrls: ['./side-navigation.component.scss']
             }]
     }], function () { return []; }, null); })();
+
+
+/***/ }),
+
+/***/ "siNY":
+/*!***********************************************!*\
+  !*** ./src/app/drink/drink-routing.module.ts ***!
+  \***********************************************/
+/*! exports provided: DrinkRoutingModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkRoutingModule", function() { return DrinkRoutingModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
+
+
+
+
+const routes = [];
+class DrinkRoutingModule {
+}
+DrinkRoutingModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: DrinkRoutingModule });
+DrinkRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function DrinkRoutingModule_Factory(t) { return new (t || DrinkRoutingModule)(); }, imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes)], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] });
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](DrinkRoutingModule, { imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]], exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]] }); })();
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkRoutingModule, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
+        args: [{
+                imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forChild(routes)],
+                exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+            }]
+    }], null, null); })();
+
+
+/***/ }),
+
+/***/ "tNGV":
+/*!***********************************************************************!*\
+  !*** ./src/app/drink/drink-view/drink-image/drink-image.component.ts ***!
+  \***********************************************************************/
+/*! exports provided: DrinkImageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkImageComponent", function() { return DrinkImageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+
+
+class DrinkImageComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DrinkImageComponent.ɵfac = function DrinkImageComponent_Factory(t) { return new (t || DrinkImageComponent)(); };
+DrinkImageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkImageComponent, selectors: [["app-drink-image"]], inputs: { drink: "drink" }, decls: 2, vars: 1, consts: [[1, "panel__body", "center-image"], [3, "src"]], template: function DrinkImageComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpropertyInterpolate"]("src", ctx.drink.image, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+    } }, styles: ["img[_ngcontent-%COMP%] {\n  max-width: 250px;\n  max-height: 250px;\n}\n\n.center-image[_ngcontent-%COMP%] {\n  text-align: center !important;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZHJpbmsvZHJpbmstdmlldy9kcmluay1pbWFnZS9kcmluay1pbWFnZS5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFBO0VBQ0EsaUJBQUE7QUFDRjs7QUFFQTtFQUNFLDZCQUFBO0FBQ0YiLCJmaWxlIjoic3JjL2FwcC9kcmluay9kcmluay12aWV3L2RyaW5rLWltYWdlL2RyaW5rLWltYWdlLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaW1nIHtcbiAgbWF4LXdpZHRoOiAyNTBweDtcbiAgbWF4LWhlaWdodDogMjUwcHg7XG59XG5cbi5jZW50ZXItaW1hZ2Uge1xuICB0ZXh0LWFsaWduOiBjZW50ZXIgIWltcG9ydGFudDtcbn1cbiJdfQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkImageComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-drink-image',
+                templateUrl: './drink-image.component.html',
+                styleUrls: ['./drink-image.component.scss']
+            }]
+    }], function () { return []; }, { drink: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
 
 
 /***/ }),
@@ -1275,6 +1747,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _search_results_routing_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search-results-routing.module */ "Zrah");
 /* harmony import */ var _search_results_search_results_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./search-results/search-results.component */ "mnzC");
+/* harmony import */ var _drink_drink_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../drink/drink.module */ "OJPV");
+
 
 
 
@@ -1285,20 +1759,134 @@ class SearchResultsModule {
 SearchResultsModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: SearchResultsModule });
 SearchResultsModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function SearchResultsModule_Factory(t) { return new (t || SearchResultsModule)(); }, imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-            _search_results_routing_module__WEBPACK_IMPORTED_MODULE_2__["SearchResultsRoutingModule"]
+            _search_results_routing_module__WEBPACK_IMPORTED_MODULE_2__["SearchResultsRoutingModule"],
+            _drink_drink_module__WEBPACK_IMPORTED_MODULE_4__["DrinkModule"]
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](SearchResultsModule, { declarations: [_search_results_search_results_component__WEBPACK_IMPORTED_MODULE_3__["SearchResultsComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-        _search_results_routing_module__WEBPACK_IMPORTED_MODULE_2__["SearchResultsRoutingModule"]] }); })();
+        _search_results_routing_module__WEBPACK_IMPORTED_MODULE_2__["SearchResultsRoutingModule"],
+        _drink_drink_module__WEBPACK_IMPORTED_MODULE_4__["DrinkModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SearchResultsModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
                 declarations: [_search_results_search_results_component__WEBPACK_IMPORTED_MODULE_3__["SearchResultsComponent"]],
                 imports: [
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                    _search_results_routing_module__WEBPACK_IMPORTED_MODULE_2__["SearchResultsRoutingModule"]
+                    _search_results_routing_module__WEBPACK_IMPORTED_MODULE_2__["SearchResultsRoutingModule"],
+                    _drink_drink_module__WEBPACK_IMPORTED_MODULE_4__["DrinkModule"]
                 ]
             }]
     }], null, null); })();
+
+
+/***/ }),
+
+/***/ "wNRM":
+/*!**********************************************************!*\
+  !*** ./src/app/drink/drink-view/drink-view.component.ts ***!
+  \**********************************************************/
+/*! exports provided: DrinkViewComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DrinkViewComponent", function() { return DrinkViewComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _drink_name_drink_name_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./drink-name/drink-name.component */ "KWMB");
+/* harmony import */ var _drink_image_drink_image_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./drink-image/drink-image.component */ "tNGV");
+/* harmony import */ var _drink_glass_drink_glass_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./drink-glass/drink-glass.component */ "Hnkh");
+/* harmony import */ var _drink_ingredient_list_drink_ingredient_list_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./drink-ingredient-list/drink-ingredient-list.component */ "bBm7");
+/* harmony import */ var _drink_instructions_drink_instructions_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./drink-instructions/drink-instructions.component */ "RIGJ");
+
+
+
+
+
+
+
+
+function DrinkViewComponent_div_0_div_4_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-drink-image", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("drink", ctx_r1.drink);
+} }
+function DrinkViewComponent_div_0_div_5_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-drink-glass", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r2 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("drink", ctx_r2.drink);
+} }
+function DrinkViewComponent_div_0_div_6_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-drink-ingredient-list", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r3 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("drink", ctx_r3.drink);
+} }
+function DrinkViewComponent_div_0_div_7_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-drink-instructions", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("drink", ctx_r4.drink);
+} }
+function DrinkViewComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "app-drink-name");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, DrinkViewComponent_div_0_div_4_Template, 2, 1, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](5, DrinkViewComponent_div_0_div_5_Template, 2, 1, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](6, DrinkViewComponent_div_0_div_6_Template, 2, 1, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](7, DrinkViewComponent_div_0_div_7_Template, 2, 1, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx_r0.drink.name);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.drink.image);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.drink.glass);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.drink.ingredients);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx_r0.drink.instruction);
+} }
+class DrinkViewComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+}
+DrinkViewComponent.ɵfac = function DrinkViewComponent_Factory(t) { return new (t || DrinkViewComponent)(); };
+DrinkViewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkViewComponent, selectors: [["app-drink-view"]], inputs: { drink: "drink" }, decls: 1, vars: 1, consts: [["class", "panel__body", "style", "overflow: hidden !important;", 4, "ngIf"], [1, "panel__body", 2, "overflow", "hidden !important"], [4, "ngIf"], [3, "drink"]], template: function DrinkViewComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, DrinkViewComponent_div_0_Template, 8, 5, "div", 0);
+    } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.drink.name);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["NgIf"], _drink_name_drink_name_component__WEBPACK_IMPORTED_MODULE_2__["DrinkNameComponent"], _drink_image_drink_image_component__WEBPACK_IMPORTED_MODULE_3__["DrinkImageComponent"], _drink_glass_drink_glass_component__WEBPACK_IMPORTED_MODULE_4__["DrinkGlassComponent"], _drink_ingredient_list_drink_ingredient_list_component__WEBPACK_IMPORTED_MODULE_5__["DrinkIngredientListComponent"], _drink_instructions_drink_instructions_component__WEBPACK_IMPORTED_MODULE_6__["DrinkInstructionsComponent"]], styles: [".panel__body[_ngcontent-%COMP%] {\n  page-break-inside: avoid;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZHJpbmsvZHJpbmstdmlldy9kcmluay12aWV3LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usd0JBQUE7QUFDRiIsImZpbGUiOiJzcmMvYXBwL2RyaW5rL2RyaW5rLXZpZXcvZHJpbmstdmlldy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIi5wYW5lbF9fYm9keSB7XG4gIHBhZ2UtYnJlYWstaW5zaWRlOiBhdm9pZDtcbn1cbiJdfQ== */"] });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](DrinkViewComponent, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
+        args: [{
+                selector: 'app-drink-view',
+                templateUrl: './drink-view.component.html',
+                styleUrls: ['./drink-view.component.scss']
+            }]
+    }], function () { return []; }, { drink: [{
+            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
+        }] }); })();
 
 
 /***/ }),

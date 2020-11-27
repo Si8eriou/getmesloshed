@@ -9,6 +9,7 @@ import {Store} from "@ngrx/store";
   styleUrls: ['./search-results.component.scss']
 })
 export class SearchResultsComponent implements OnInit {
+  public searchResults: any;
 
   constructor(private store: Store) { }
 
@@ -21,7 +22,7 @@ export class SearchResultsComponent implements OnInit {
       skipWhile((result) => !result || result.length === 0),
       take(1)
     ).subscribe((result) => {
-      console.log(result);
+      this.searchResults = result.data;
     })
   }
 

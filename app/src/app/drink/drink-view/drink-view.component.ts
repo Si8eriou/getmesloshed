@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-drink-view',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./drink-view.component.scss']
 })
 export class DrinkViewComponent implements OnInit {
+  @Input() drink;
 
   constructor() { }
 

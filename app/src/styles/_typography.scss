@@ -1,0 +1,82 @@
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $weight-bold;
+  color: $text-color;
+  line-height: $line-height-base;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.title {
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.title, .subtitle {
+
+  &.is-lg-size-1 {
+    font-size: $size-1 * 2;
+  }
+
+  &.is-size-1 {
+    font-size: $size-1;
+  }
+  &.is-size-2 {
+    font-size: $size-2;
+  }
+  &.is-size-3 {
+    font-size: $size-3;
+  }
+  &.is-size-4 {
+    font-size: $size-4;
+  }
+  &.is-size-5 {
+    font-size: $size-5;
+  }
+  &.is-size-6 {
+    font-size: $size-6;
+  }
+}
+
+.subtitle {
+  color: $grey-light;
+  font-weight: 400;
+}
+
+.title + .subtitle, .subtitle + .title {
+  margin-top: -.875em;
+}
+.title.is-size-3 + .subtitle {
+  margin-top: -1em;
+}
+.title.is-size-2 + .subtitle.is-size-3 {
+  margin-top: -1.375em;
+}
+
+p {
+  font-size: $font-size-base;
+  color: $black-bis;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
+.is-primary {
+  color: var(--theme-primary-color) !important;
+}
+
+.is-bold {
+  font-weight: $weight-bold !important;
+}
+
+.is-inverted {
+  color: var(--theme-text-color) !important;
+}
+
+.centered-text {
+  text-align: center;
+}

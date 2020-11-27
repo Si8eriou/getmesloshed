@@ -26,11 +26,12 @@ export class SearchService {
   }
 
   search(searchParams) {
+    console.log(searchParams);
     let url = `${this.urlApi}/search`;
 
     return this.http.get(url, {
       params: {
-        searchParams: searchParams.payload
+        searchParams
       }
     });
   }

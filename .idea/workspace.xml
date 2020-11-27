@@ -8,12 +8,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/Search/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/Search/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Models/Drink.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Models/Drink.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/app/Repositories/Search/SearchRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Repositories/Search/SearchRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ubuntu-bionic-18.04-cloudimg-console.log" beforeDir="false" afterPath="$PROJECT_DIR$/ubuntu-bionic-18.04-cloudimg-console.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +182,9 @@
       <workItem from="1605552192698" duration="1945000" />
       <workItem from="1605566870932" duration="4711000" />
       <workItem from="1605635930244" duration="46000" />
-      <workItem from="1605899566956" duration="311000" />
+      <workItem from="1605899566956" duration="4826000" />
+      <workItem from="1606146064637" duration="44000" />
+      <workItem from="1606496294372" duration="3481000" />
     </task>
     <servers />
   </component>
@@ -226,13 +224,13 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2827" y="160" width="808" height="1154" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1601675986554" />
-    <state x="2793" y="311" width="885" height="844" key="find.popup" timestamp="1605305018857">
+    <state x="2793" y="311" width="885" height="844" key="find.popup" timestamp="1605902790338">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2793" y="311" width="885" height="844" key="find.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605305018857" />
-    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup" timestamp="1605569085183">
+    <state x="2793" y="311" width="885" height="844" key="find.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605902790338" />
+    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup" timestamp="1605903713977">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605569085183" />
+    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605903713977" />
   </component>
 </project>

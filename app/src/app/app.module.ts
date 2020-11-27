@@ -32,6 +32,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { searchEffects } from "./store/effects/search.effects";
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import {SearchResultsModule} from "./search-results/search-results.module";
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { environment } from '../environments/environment';
     MatAutocompleteModule,
 
     HomeModule,
+    SearchResultsModule,
 
     StoreModule.forRoot(reducers, {
       metaReducers,

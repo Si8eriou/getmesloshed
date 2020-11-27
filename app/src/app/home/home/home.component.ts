@@ -67,7 +67,6 @@ export class HomeComponent implements OnInit {
     this.searchList.push(event.option.viewValue);
     this.searchInput.nativeElement.value = '';
     this.searchCtrl.setValue(null);
-    this.search();
   }
 
   private _filter(value: string): string[] {
@@ -88,8 +87,10 @@ export class HomeComponent implements OnInit {
   }
 
   search() {
-    this.store.dispatch(fromSearchActions.search({payload: this.searchList}));
 
-    this.router.navigate(['/search-results']);
+    console.log(this.searchList.join());
+    this.store.dispatch(fromSearchActions.search({payload: this.searchList.join()}));
+
+    this.router.navigate(['search-results'])
   }
 }

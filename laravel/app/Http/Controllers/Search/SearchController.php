@@ -37,6 +37,9 @@ class SearchController extends Controller
 
     public function search(Request $request, SearchRepository $searchRepository)
     {
-        return $searchRepository->search($request->get('searchParams'));
+        $searchParams = $request->get('searchParams');
+        $searchParams = explode(',', $searchParams);
+
+        return $searchRepository->search($searchParams);
     }
 }

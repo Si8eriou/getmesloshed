@@ -1,38 +1,10 @@
 <div>
-  <div style="text-align: center; margin-top: 7em">
-    <span style="font-size: 100px; text-align: center; vertical-align: center">LOGO</span>
+  <div class="centered-text">
+    <app-app-logo></app-app-logo>
   </div>
 
 
-  <div style="text-align: center !important;">
-
-    <mat-form-field style="width: 30%">
-      <mat-chip-list #searchChipList aria-label="Fruit selection">
-        <mat-chip
-          *ngFor="let param of searchList"
-          [selectable]="selectable"
-          [removable]="removable"
-          (removed)="remove(param)">
-          {{param}}
-          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
-        </mat-chip>
-        <input
-          placeholder="Search"
-          #searchInput
-          [formControl]="searchCtrl"
-          [matAutocomplete]="searchAutoComplete"
-          [matChipInputFor]="searchChipList"
-          [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
-          (matChipInputTokenEnd)="add($event)">
-      </mat-chip-list>
-      <mat-autocomplete #searchAutoComplete="matAutocomplete" (optionSelected)="selected($event)">
-        <mat-option *ngFor="let option of filteredThing | async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
-
+  <div class="centered-text">
+    <app-search></app-search>
   </div>
-
-  <button (click)="search()">Search</button>
 </div>

@@ -35,11 +35,16 @@ class SearchController extends Controller
         return json_encode($info, 1);
     }
 
-    public function search(Request $request, SearchRepository $searchRepository)
+    public function search(Request $request, SearchRepository $searchRepository, CocktailRepository $cocktailRepository)
     {
         $searchParams = $request->get('searchParams');
         $searchParams = explode(',', $searchParams);
 
-        return $searchRepository->search($searchParams);
+        $results = $searchRepository->search($searchParams);
+
+        if($results->total()) {
+            return $results;
+        }
+            return $cocktailRepository->getRandomDrinks();
     }
 }

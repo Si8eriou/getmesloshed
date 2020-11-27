@@ -3,6 +3,8 @@ import * as fromRoot from "../../store/reducers";
 import {skipWhile, take} from "rxjs/operators";
 import {Store} from "@ngrx/store";
 
+import * as fromSearchActions from '../../store/actions/search.actions';
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -22,8 +24,23 @@ export class SearchResultsComponent implements OnInit {
       skipWhile((result) => !result || result.length === 0),
       take(1)
     ).subscribe((result) => {
-      this.searchResults = result.data;
+      console.log(result);
+      this.searchResults = result;
     })
   }
+
+  get nextPageUrl() {
+    return this.searchResults.next_page_url;
+  }
+
+  get prevPageUrl() {
+    return this.searchResults.prev_page_url;
+  }
+
+  get currentPage() {
+    return this.searchResults.current_page;
+  }
+
+
 
 }

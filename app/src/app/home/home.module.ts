@@ -8,6 +8,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatChipsModule} from "@angular/material/chips";
 import {MatIconModule} from "@angular/material/icon";
 import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {CommonComponentsModule} from "../common-components/common-components.module";
 
 
 @NgModule({
@@ -21,6 +22,10 @@ import {MatAutocompleteModule} from "@angular/material/autocomplete";
     MatIconModule,
     MatAutocompleteModule,
     ReactiveFormsModule,
+    CommonComponentsModule,
+  ],
+  exports: [
+    HomeComponent
   ],
   providers: []
 })

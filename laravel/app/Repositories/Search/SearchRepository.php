@@ -19,7 +19,7 @@ class SearchRepository
                 })->orWhereHas('glass', function ($query) use ($terms) {
                     $this->getWhereQueries($query, $terms);
                 });
-            })->paginate();
+            })->paginate(10);
     }
 
     private function getWhereQueries(&$query, $terms)

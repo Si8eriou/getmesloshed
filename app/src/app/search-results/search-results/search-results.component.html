@@ -1,5 +1,28 @@
-<div *ngFor="let drink of searchResults" style="overflow: hidden">
-  <div class="column">
-    <app-drink-view [drink]="drink"></app-drink-view>
+<div *ngIf="searchResults">
+
+  <div *ngFor="let drink of searchResults.data">
+    <div class="column">
+      <app-drink-view [drink]="drink"></app-drink-view>
+    </div>
+  </div>
+
+  <div class="centered-text" style="  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 -3rem;">
+    <button mat-icon-button *ngIf="prevPageUrl" routerLink="{{prevPageUrl}}">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+
+    <a *ngIf="prevPageUrl" routerLink="{{prevPageUrl}}">{{currentPage - 1}}</a>
+    <a routerLink="{{currentPage}}">{{currentPage}}</a>
+    <a *ngIf="nextPageUrl" routerLink="{{nextPageUrl}}">{{currentPage + 1}}</a>
+
+    <button mat-icon-button *ngIf="nextPageUrl" routerLink="{{nextPageUrl}}">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
   </div>
 </div>
+
+<div *ngIf="!searchResults" class="centered-text">No results found!</div>

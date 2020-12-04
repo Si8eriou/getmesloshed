@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import * as fromRoot from "../../store/reducers";
 import {skipWhile, take} from "rxjs/operators";
 import {Store} from "@ngrx/store";
 
-import * as fromSearchActions from '../../store/actions/search.actions';
+import {SearchService} from "../../utilities/services/search.service";
 
 @Component({
   selector: 'app-search-results',
@@ -13,7 +13,10 @@ import * as fromSearchActions from '../../store/actions/search.actions';
 export class SearchResultsComponent implements OnInit {
   public searchResults: any;
 
-  constructor(private store: Store) { }
+  constructor(
+    private store: Store,
+              private servicee: SearchService
+              ) { }
 
   ngOnInit(): void {
     this.getSearchResults();
@@ -24,13 +27,12 @@ export class SearchResultsComponent implements OnInit {
       skipWhile((result) => !result || result.length === 0),
       take(1)
     ).subscribe((result) => {
-      console.log(result);
       this.searchResults = result;
     })
   }
 
-  get nextPageUrl() {
-    return this.searchResults.next_page_url;
+  nextPageUrl() {
+
   }
 
   get prevPageUrl() {
@@ -40,7 +42,5 @@ export class SearchResultsComponent implements OnInit {
   get currentPage() {
     return this.searchResults.current_page;
   }
-
-
 
 }

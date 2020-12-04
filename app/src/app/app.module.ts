@@ -33,6 +33,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import {SearchResultsModule} from "./search-results/search-results.module";
 import {ProfileModule} from "./profile/profile.module";
+import {profileEffects} from "./store/effects/auth.effects";
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import {ProfileModule} from "./profile/profile.module";
 
     EffectsModule.forRoot(
       [
-        searchEffects
+        searchEffects,
+        profileEffects
       ]
     ),
 

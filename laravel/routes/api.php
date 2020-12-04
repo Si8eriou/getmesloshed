@@ -26,3 +26,8 @@ Route::group(['prefix' => 'search'], function () {
     Route::get('search', 'App\Http\Controllers\Search\SearchController@search');
     Route::get('getSearchInfo', 'App\Http\Controllers\Search\SearchController@getSearchInfo');
 });
+
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('updateOrCreate', 'App\Http\Controllers\Auth\AuthController@updateOrCreate');
+    Route::get('login', 'App\Http\Controllers\Auth\AuthController@login');
+});

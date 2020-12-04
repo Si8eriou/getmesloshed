@@ -2,17 +2,23 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
-import { CreateUserProfileComponent } from './create-user-profile/create-user-profile.component';
-import { EditUserProfileComponent } from './edit-user-profile/edit-user-profile.component';
 import { ProfileSettingsComponent } from './profile-settings/profile-settings.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CreateProfileAccountComponent } from './create-profile-account/create-profile-account.component';
+import { EditProfileAccountComponent } from './edit-profile-account/edit-profile-account.component';
+import {CommonComponentsModule} from "../common-components/common-components.module";
+import {MatInputModule} from "@angular/material/input";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
-  declarations: [CreateUserProfileComponent, EditUserProfileComponent, ProfileSettingsComponent, ProfileComponent],
+  declarations: [ProfileSettingsComponent, ProfileComponent, CreateProfileAccountComponent, EditProfileAccountComponent],
   imports: [
     CommonModule,
-    ProfileRoutingModule
+    ProfileRoutingModule,
+    CommonComponentsModule,
+    MatInputModule,
+    ReactiveFormsModule
   ]
 })
 export class ProfileModule { }

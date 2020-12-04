@@ -19,9 +19,13 @@
     <a routerLink="{{currentPage}}">{{currentPage}}</a>
     <a *ngIf="nextPageUrl" routerLink="{{nextPageUrl}}">{{currentPage + 1}}</a>
 
-    <button mat-icon-button *ngIf="nextPageUrl" routerLink="{{nextPageUrl}}">
+    <button mat-icon-button *ngIf="nextPageUrl" (click)="nextPageUrl()">
       <mat-icon>navigate_next</mat-icon>
     </button>
+  </div>
+
+  <div>
+
   </div>
 </div>
 

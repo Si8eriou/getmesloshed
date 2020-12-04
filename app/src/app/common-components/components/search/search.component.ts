@@ -1,5 +1,5 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
-import {COMMA, ENTER} from "@angular/cdk/keycodes";
+import {COMMA, ENTER, SPACE} from "@angular/cdk/keycodes";
 import {MatChipInputEvent} from "@angular/material/chips";
 import {MatAutocomplete, MatAutocompleteSelectedEvent} from "@angular/material/autocomplete";
 import {FormControl} from "@angular/forms";
@@ -23,13 +23,13 @@ export class SearchComponent implements OnInit {
   public list: string[] = [];
   public removable: boolean = true;
   public selectable: boolean = true;
-  public filteredThing: Observable<string[]>
+  public filteredSearchCriteria: Observable<string[]>
 
   @ViewChild('searchInput') searchInput: ElementRef<HTMLInputElement>;
   @ViewChild('searchAutoComplete') matAutocomplete: MatAutocomplete;
 
   constructor(private store: Store, private searchService: SearchService, private router: Router) {
-    this.filteredThing = this.searchCtrl.valueChanges.pipe(
+    this.filteredSearchCriteria = this.searchCtrl.valueChanges.pipe(
       startWith(null),
       map((param: string | null) => param ? this._filter(param) : this.list.slice()));
   }

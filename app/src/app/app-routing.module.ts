@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'search-results',
     loadChildren: './search-results/search-results.module#SearchResultsModule'
+  },
+  {
+    path: 'profile',
+    loadChildren: './profile/profile.module#ProfileModule'
   }
 ];
 

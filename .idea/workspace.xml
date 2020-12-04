@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8e2cfe40-dfab-4613-ae55-560b0f86db93" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/Search/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/Search/SearchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Repositories/Search/SearchRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Repositories/Search/SearchRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ubuntu-bionic-18.04-cloudimg-console.log" beforeDir="false" afterPath="$PROJECT_DIR$/ubuntu-bionic-18.04-cloudimg-console.log" afterDir="false" />
-    </list>
+    <list default="true" id="8e2cfe40-dfab-4613-ae55-560b0f86db93" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -184,7 +177,7 @@
       <workItem from="1605635930244" duration="46000" />
       <workItem from="1605899566956" duration="4826000" />
       <workItem from="1606146064637" duration="44000" />
-      <workItem from="1606496294372" duration="3481000" />
+      <workItem from="1606496294372" duration="15007000" />
     </task>
     <servers />
   </component>
@@ -212,25 +205,33 @@
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2838" y="377" width="786" height="719" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605302187299" />
-    <state x="2597" y="327" width="1300" height="819" key="NewPhpClassDialog" timestamp="1605299502790">
+    <state x="2597" y="327" width="1300" height="819" key="NewPhpClassDialog" timestamp="1606502627095">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2597" y="327" width="1300" height="819" key="NewPhpClassDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605299502790" />
+    <state x="2597" y="327" width="1300" height="819" key="NewPhpClassDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1606502627095" />
     <state x="2953" y="624" width="555" height="226" key="NewPhpFileDialog" timestamp="1604516807511">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2953" y="624" width="555" height="226" key="NewPhpFileDialog/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1604516807511" />
+    <state x="2829" y="338" width="810" height="790" key="StructurePopup" timestamp="1606505130700">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2829" y="338" width="810" height="790" key="StructurePopup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1606505130700" />
     <state x="2827" y="160" width="808" height="1154" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1601675986554">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
     <state x="2827" y="160" width="808" height="1154" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1601675986554" />
-    <state x="2793" y="311" width="885" height="844" key="find.popup" timestamp="1605902790338">
+    <state x="2793" y="311" width="949" height="844" key="find.popup" timestamp="1606510475346">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2793" y="311" width="885" height="844" key="find.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605902790338" />
-    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup" timestamp="1605903713977">
+    <state x="2793" y="311" width="949" height="844" key="find.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1606510475346" />
+    <state x="2731" y="333" key="run.anything.popup" timestamp="1606513349579">
       <screen x="1920" y="0" width="2560" height="1440" />
     </state>
-    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1605903713977" />
+    <state x="2731" y="333" key="run.anything.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1606513349579" />
+    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup" timestamp="1606511125009">
+      <screen x="1920" y="0" width="2560" height="1440" />
+    </state>
+    <state x="2729" y="0" width="1009" height="1470" key="search.everywhere.popup/1920.0.2560.1440/0.360.1920.1080/4480.360.1920.1080@1920.0.2560.1440" timestamp="1606511125009" />
   </component>
 </project>

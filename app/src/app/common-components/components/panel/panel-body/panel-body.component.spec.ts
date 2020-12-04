@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateUserProfileComponent } from './create-user-profile.component';
+import { PanelBodyComponent } from './panel-body.component';
 
-describe('CreateUserProfileComponent', () => {
-  let component: CreateUserProfileComponent;
-  let fixture: ComponentFixture<CreateUserProfileComponent>;
+describe('PanelBodyComponent', () => {
+  let component: PanelBodyComponent;
+  let fixture: ComponentFixture<PanelBodyComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreateUserProfileComponent ]
+      declarations: [ PanelBodyComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateUserProfileComponent);
+    fixture = TestBed.createComponent(PanelBodyComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

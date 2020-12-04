@@ -1,10 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
-import {map, skipWhile, take} from 'rxjs/operators';
 import {Router} from "@angular/router";
 import {Store} from "@ngrx/store";
-import * as fromRoot from "../../store/reducers";
 
 @Injectable({
   providedIn: 'root'
@@ -25,10 +23,12 @@ export class SearchService {
     return this.http.get(url);
   }
 
-  search(searchParams) {
-    console.log(searchParams);
+  search(searchParams, page = false) {
     let url = `${this.urlApi}/search`;
 
+    if (page) {
+      url = url + '?page=' + page ;
+    }
     return this.http.get(url, {
       params: {
         searchParams

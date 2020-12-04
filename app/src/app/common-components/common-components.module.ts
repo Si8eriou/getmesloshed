@@ -18,6 +18,9 @@ import { MatAutocompleteModule } from "@angular/material/autocomplete";
 import { MatChipsModule } from "@angular/material/chips";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { AppLogoComponent } from './components/app-logo/app-logo.component';
+import { PanelHeaderComponent } from './components/panel/panel-header/panel-header.component';
+import { PanelBodyComponent } from './components/panel/panel-body/panel-body.component';
+import { PanelComponent } from './components/panel/panel/panel.component';
 
 
 @NgModule({
@@ -27,13 +30,19 @@ import { AppLogoComponent } from './components/app-logo/app-logo.component';
       IconComponent,
       ProfileMenuComponent,
       SearchComponent,
-      AppLogoComponent
+      AppLogoComponent,
+      PanelHeaderComponent,
+      PanelBodyComponent,
+      PanelComponent
     ],
   exports: [
     AppHeaderComponent,
     SideNavigationComponent,
     SearchComponent,
-    AppLogoComponent
+    AppLogoComponent,
+    PanelHeaderComponent,
+    PanelBodyComponent,
+    PanelComponent
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
 import {Action, createReducer, on} from "@ngrx/store";
 import * as profileActions from '../actions/auth.actions';
 
-export const searchFeatureKey = 'profile';
+export const searchFeatureKey = 'auth';
 
 export interface State {
   loading: boolean;
@@ -105,3 +105,5 @@ export function reducer(state: State | undefined, action: Action) {
 }
 
 export const getAuthUser = (state: State) => state.profile;
+
+export const getAuthLoginSuccess = (state: State) => state.loginProfileSuccessful;

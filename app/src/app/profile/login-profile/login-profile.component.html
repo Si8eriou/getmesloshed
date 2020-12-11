@@ -1,0 +1,41 @@
+<app-panel>
+  <app-panel-header>Login</app-panel-header>
+
+  <app-panel-body>
+    <form [formGroup]="loginForm">
+      <ng-container *ngFor="let error of error_messages.email">
+        <div
+          *ngIf="loginForm.get('email').hasError(error.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
+
+      <mat-form-field appearance="fill" style="width: 30%">
+        <mat-label>Email</mat-label>
+
+        <label>
+          <input matInput formControlName="email" required>
+        </label>
+      </mat-form-field>
+    </form>
+
+    <form [formGroup]="loginForm">
+      <ng-container *ngFor="let error of error_messages.password">
+        <div
+          *ngIf="loginForm.get('password').hasError(error.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+          {{error.message}}
+        </div>
+      </ng-container>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+
+        <label>
+          <input matInput type="password" formControlName="password" required>
+        </label>
+      </mat-form-field>
+    </form>
+
+    <button color='primary' mat-raised-button (click)="authLogin()" [disabled]="!loginForm.valid">Login</button>
+  </app-panel-body>
+</app-panel>

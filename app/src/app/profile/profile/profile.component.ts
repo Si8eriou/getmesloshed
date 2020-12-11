@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Store} from "@ngrx/store";
+import * as fromRoot from '../../store/reducers/index';
+import {skipWhile, take} from "rxjs/operators";
 
 @Component({
   selector: 'app-profile',
@@ -7,6 +9,7 @@ import {Store} from "@ngrx/store";
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  public profile;
 
   constructor(
     private store: Store
@@ -18,7 +21,12 @@ export class ProfileComponent implements OnInit {
   }
 
   getUserProfile() {
-
+    this.store.select(fromRoot.getAuthUser).pipe(
+      skipWhile((user) => !user),
+      take(1)).subscribe((profile) => {
+        this.profile = profile;
+      }
+    )
   }
 
 }

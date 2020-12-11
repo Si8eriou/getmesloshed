@@ -11,9 +11,14 @@ class AuthRepository
 {
     public function login($credentials)
     {
-        return User::where('email', $credentials->get('email'))
-            ->where('password', $credentials->get('password'))
+        $user =  User::where('email', $credentials->get('email'))
             ->first();
+
+        if($user && $user->password === $credentials->get('password')) {
+            return $user;
+        }
+
+        return false;
     }
 
     public function updateOrCreate($profile)

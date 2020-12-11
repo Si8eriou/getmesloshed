@@ -21,6 +21,7 @@ import { AppLogoComponent } from './components/app-logo/app-logo.component';
 import { PanelHeaderComponent } from './components/panel/panel-header/panel-header.component';
 import { PanelBodyComponent } from './components/panel/panel-body/panel-body.component';
 import { PanelComponent } from './components/panel/panel/panel.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { PanelComponent } from './components/panel/panel/panel.component';
       AppLogoComponent,
       PanelHeaderComponent,
       PanelBodyComponent,
-      PanelComponent
+      PanelComponent,
     ],
   exports: [
     AppHeaderComponent,
@@ -44,19 +45,20 @@ import { PanelComponent } from './components/panel/panel/panel.component';
     PanelBodyComponent,
     PanelComponent
   ],
-  imports: [
-    CommonModule,
-    CommonComponentsRoutingModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatMenuModule,
-    ReactiveFormsModule,
-    MatAutocompleteModule,
-    MatChipsModule,
-    MatFormFieldModule
-  ]
+    imports: [
+        CommonModule,
+        CommonComponentsRoutingModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        MatSidenavModule,
+        MatListModule,
+        MatMenuModule,
+        ReactiveFormsModule,
+        MatAutocompleteModule,
+        MatChipsModule,
+        MatFormFieldModule,
+        MatDialogModule
+    ]
 })
 export class CommonComponentsModule { }

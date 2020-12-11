@@ -27,5 +27,6 @@ export const getSearchResults = createSelector(search, fromSearch.getSearchResul
 
 export const auth = createFeatureSelector<State, fromAuth.State>(fromAuth.searchFeatureKey);
 export const getAuthUser = createSelector(auth, fromAuth.getAuthUser);
+export const getAuthLoginSuccess = createSelector(auth, fromAuth.getAuthLoginSuccess);
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

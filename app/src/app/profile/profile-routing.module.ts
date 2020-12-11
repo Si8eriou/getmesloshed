@@ -4,20 +4,20 @@ import {EditProfileAccountComponent} from "./edit-profile-account/edit-profile-a
 import {CreateProfileAccountComponent} from "./create-profile-account/create-profile-account.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {ProfileSettingsComponent} from "./profile-settings/profile-settings.component";
+import {DrinksProfileComponent} from "./drinks-profile/drinks-profile.component";
+import { AuthService } from "../utilities/services/auth.service";
+import {LoginProfileComponent} from "./login-profile/login-profile.component";
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'create',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
-    path: ':id',
-    redirectTo: 'acct',
-  },
-  {
     path: 'edit',
-    component: EditProfileAccountComponent
+    component: EditProfileAccountComponent,
+    canActivate:[AuthService]
   },
   {
     path: 'create',
@@ -25,12 +25,23 @@ const routes: Routes = [
   },
   {
     path: 'acct',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate:[AuthService]
   },
   {
     path: 'settings',
-    component: ProfileSettingsComponent
+    component: ProfileSettingsComponent,
+    canActivate:[AuthService]
   },
+  {
+    path: 'drinks-profile',
+    component: DrinksProfileComponent,
+    canActivate:[AuthService]
+  },
+  {
+    path: 'login',
+    component: LoginProfileComponent
+  }
 ];
 
 @NgModule({

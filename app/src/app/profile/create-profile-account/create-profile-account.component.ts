@@ -88,7 +88,6 @@ export class CreateProfileAccountComponent implements OnInit {
   }
 
   getProfile() {
-    this.store.select()
   }
 
 }

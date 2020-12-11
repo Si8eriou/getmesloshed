@@ -157,31 +157,55 @@ class CocktailParserLibrary
 
     private function getAllIngredients()
     {
-        return $this->cocktailRepository->getAllDrinkIngredients();
+        return $this->getAllDrinkIngredients();
     }
 
     private function getAllCocktails()
     {
-        return $this->cocktailRepository->getAllCocktails();
+        return $this->getAllDrinkCocktails();
     }
 
     private function getAllGlasses()
     {
-        return $this->cocktailRepository->getAllDrinkGlasses();
+        return $this->getAllDrinkGlasses();
     }
 
     private function getAllCategories()
     {
-        return $this->cocktailRepository->getAllDrinkCategories();
+        return $this->getAllDrinkCategories();
     }
 
     private function getAllTags()
     {
-        return $this->cocktailRepository->getAllTags();
+        return $this->getAllDrinkTags();
     }
 
     private function getCurrentSavedIngredientRelationships() {
-        return $this->cocktailRepository->getCurrentSavedIngredientRelationships();
+        return $this->getCurrentSavedDrinkIngredientRelationships();
+    }
+
+    private function getAllDrinkIngredients() {
+        return Ingredient::all();
+    }
+
+    private function getAllDrinkCocktails() {
+        return Drink::all();
+    }
+
+    private function getAllDrinkGlasses() {
+        return Glass::all();
+    }
+
+    private function getAllDrinkCategories() {
+        return Category::all();
+    }
+
+    private function getAllDrinkTags() {
+        return Tag::all();
+    }
+
+    private function getCurrentSavedDrinkIngredientRelationships() {
+        return DrinkIngredientRelationship::all();
     }
 
     private function parseIngredients()

@@ -1,4 +1,4 @@
-<app-panel>
+<app-panel *ngIf="profile">
   <app-panel-header>Profile</app-panel-header>
 
   <app-panel-body>
@@ -6,8 +6,8 @@
       <app-edit-profile-account></app-edit-profile-account>
     </div>
 
-    <div>
-      <app-profile-settings></app-profile-settings>
-    </div>
+<!--    <div>-->
+<!--      <app-profile-settings></app-profile-settings>-->
+<!--    </div>-->
   </app-panel-body>
 </app-panel>

@@ -8,17 +8,22 @@ import { CreateProfileAccountComponent } from './create-profile-account/create-p
 import { EditProfileAccountComponent } from './edit-profile-account/edit-profile-account.component';
 import {CommonComponentsModule} from "../common-components/common-components.module";
 import {MatInputModule} from "@angular/material/input";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { DrinksProfileComponent } from './drinks-profile/drinks-profile.component';
+import { LoginProfileComponent } from './login-profile/login-profile.component';
+import {MatButtonModule} from "@angular/material/button";
 
 
 @NgModule({
-  declarations: [ProfileSettingsComponent, ProfileComponent, CreateProfileAccountComponent, EditProfileAccountComponent],
+  declarations: [ProfileSettingsComponent, ProfileComponent, CreateProfileAccountComponent, EditProfileAccountComponent, DrinksProfileComponent, LoginProfileComponent],
   imports: [
     CommonModule,
     ProfileRoutingModule,
     CommonComponentsModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    MatButtonModule
   ]
 })
 export class ProfileModule { }

@@ -3,32 +3,31 @@ import {Actions, createEffect, ofType} from '@ngrx/effects';
 import {catchError, map, switchMap, tap} from 'rxjs/operators';
 import {of} from 'rxjs';
 
-import * as profileActions from '../actions/auth.actions';
-import { ProfileService } from "../../utilities/services/profile.service";
+import * as authActions from '../actions/auth.actions';
 import {AuthService} from "../../utilities/services/auth.service";
 
 @Injectable()
 export class profileEffects {
 
   createProfile$ = createEffect(() => this.actions$.pipe(
-    ofType(profileActions.createProfileAction.type),
+    ofType(authActions.createProfileAction.type),
     switchMap((profile: any) => this.authService.updateOrCreate(profile.payload)),
-    map((response: any) => profileActions.createProfileSuccessfulAction({payload: response})),
-    catchError((error: string) => of(profileActions.createProfileFailedAction({payload: error})))
+    map((response: any) => authActions.createProfileSuccessfulAction({payload: response})),
+    catchError((error: string) => of(authActions.createProfileFailedAction({payload: error})))
   ));
 
   loadProfile$ = createEffect(() => this.actions$.pipe(
-    ofType(profileActions.loginProfileAction.type),
+    ofType(authActions.loginProfileAction.type),
     switchMap((profile: any) => this.authService.login(profile.payload)),
-    map((response: any) => profileActions.loginProfileSuccessfulAction({payload: response})),
-    catchError((error: string) => of(profileActions.loginProfileFailedAction({payload: error})))
+    map((response: any) => authActions.loginProfileSuccessfulAction({payload: response})),
+    catchError((error: string) => of(authActions.loginProfileFailedAction({payload: error})))
   ));
 
   editProfile$ = createEffect(() => this.actions$.pipe(
-    ofType(profileActions.editProfileAction.type),
+    ofType(authActions.editProfileAction.type),
     switchMap((profile: any) => this.authService.updateOrCreate(profile.payload)),
-    map((response: any) => profileActions.editProfileSuccessfulAction({payload: response})),
-    catchError((error: string) => of(profileActions.editProfileFailedAction({payload: error})))
+    map((response: any) => authActions.editProfileSuccessfulAction({payload: response})),
+    catchError((error: string) => of(authActions.editProfileFailedAction({payload: error})))
   ));
 
   constructor(

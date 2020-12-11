@@ -10,6 +10,7 @@ use App\Models\DrinkIngredientRelationship;
 use App\Models\Glass;
 use App\Models\Ingredient;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Cache;
 
 class CocktailRepository
 {
@@ -21,7 +22,9 @@ class CocktailRepository
 
     public function getAllDrinksNames()
     {
-        return Drink::all()->sortBy('name')->pluck('name');
+        return Cache::rememberForever('drinks', function () {
+            return Drink::all()->sortBy('name')->pluck('name');
+        });
     }
 
     public function getDrinkByID($drinkID)

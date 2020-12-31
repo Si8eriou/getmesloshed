@@ -23,8 +23,8 @@
 </mat-toolbar>
 
 <mat-menu #profile_menu=matMenu>
-  <button mat-menu-item [routerLink]="['/profile/acct']">Profile</button>
-  <button mat-menu-item>Settings</button>
+  <button mat-menu-item [routerLink]="['/profile/acct']">{{authenticated ? 'Profile' : 'Login' }}</button>
+  <button mat-menu-item *ngIf="authenticated" [routerLink]="['/profile/settings']">Settings</button>
 
   <!--  TODO login-->
 

@@ -1,10 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from "@ngrx/store";
+import {MatDialog} from "@angular/material/dialog";
 
 import * as fromRoot from '../../store/reducers/index';
 import * as fromAuth from '../../store/actions/auth.actions';
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {CreateProfileAccountComponent} from "../create-profile-account/create-profile-account.component";
 
 @Component({
   selector: 'app-login-profile',
@@ -16,19 +18,10 @@ export class LoginProfileComponent implements OnInit {
   public password: any;
   public loginForm: FormGroup;
 
-  public error_messages = {
-    'password': [
-      {type: 'required', message: 'Password is required.'},
-    ],
-    'email': [
-      {type: 'required', message: 'Email is required.'},
-      {type: 'email', message: 'Please enter a valid email.'}
-    ]
-  }
-
   constructor(private store: Store,
               public formBuilder: FormBuilder,
-              private router: Router
+              private router: Router,
+              private dialog: MatDialog
   ) {
     this.loginForm = this.formBuilder.group({
       password: new FormControl('', Validators.compose([
@@ -44,7 +37,7 @@ export class LoginProfileComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  authLogin() {
+  authLogin($event) {
     this.store.dispatch(fromAuth.loginProfileAction({payload: {email: this.loginForm.controls['email'].value, password: this.loginForm.controls['password'].value}}));
 
     this.store.select(fromRoot.getAuthLoginSuccess).subscribe((success) => {
@@ -52,6 +45,10 @@ export class LoginProfileComponent implements OnInit {
         this.router.navigate(['/home']);
       }
     })
+  }
+
+  openCreateProfileModal() {
+    this.dialog.open(CreateProfileAccountComponent);
   }
 
 }

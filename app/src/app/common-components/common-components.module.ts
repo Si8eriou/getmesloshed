@@ -22,6 +22,7 @@ import { PanelHeaderComponent } from './components/panel/panel-header/panel-head
 import { PanelBodyComponent } from './components/panel/panel-body/panel-body.component';
 import { PanelComponent } from './components/panel/panel/panel.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { ModalComponent } from './components/modal/modal.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {MatDialogModule} from "@angular/material/dialog";
       PanelHeaderComponent,
       PanelBodyComponent,
       PanelComponent,
+      ModalComponent,
     ],
   exports: [
     AppHeaderComponent,
@@ -43,7 +45,8 @@ import {MatDialogModule} from "@angular/material/dialog";
     AppLogoComponent,
     PanelHeaderComponent,
     PanelBodyComponent,
-    PanelComponent
+    PanelComponent,
+    ModalComponent
   ],
     imports: [
         CommonModule,

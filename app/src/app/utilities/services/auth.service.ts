@@ -5,6 +5,8 @@ import * as fromRoot from "../../store/reducers";
 import {Router} from "@angular/router";
 import {Store} from "@ngrx/store";
 import {take} from "rxjs/operators";
+import {MatDialog} from "@angular/material/dialog";
+import {LoginProfileComponent} from "../../profile/login-profile/login-profile.component";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,8 @@ export class AuthService {
 
   constructor(private http: HttpClient,
               private router: Router,
-              private store: Store
+              private store: Store,
+              private dialog: MatDialog
   ) {
     this.urlApi = environment.apiUrl + '/auth';
   }
@@ -43,11 +46,10 @@ export class AuthService {
 
   public canActivate() {
     this.store.select(fromRoot.getAuthUser).pipe(take(1)).subscribe(profile => {
-      console.log(profile);
       if (profile) {
         return true;
       } else {
-        this.router.navigate(['login']);
+        this.dialog.open(LoginProfileComponent);
         return false;
       }
     });

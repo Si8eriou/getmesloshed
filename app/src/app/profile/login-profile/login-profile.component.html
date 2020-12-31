@@ -1,41 +1,43 @@
-<app-panel>
-  <app-panel-header>Login</app-panel-header>
+<app-modal [name]="'loginModal'" [class]="'loginSize'" [wildCardButtonOne]="'Login'" [wildCardButtonTwo]="'Create Profile'"
+           (wildCardButtonOneEvent)="authLogin($event)" (wildCardButtonTwoEvent)="openCreateProfileModal()">
+  <app-panel>
+    <app-panel-header>Login</app-panel-header>
 
-  <app-panel-body>
-    <form [formGroup]="loginForm">
-      <ng-container *ngFor="let error of error_messages.email">
-        <div
-          *ngIf="loginForm.get('email').hasError(error.type) && (loginForm.get('email').dirty || loginForm.get('email').touched)">
-          {{error.message}}
-        </div>
-      </ng-container>
+    <app-panel-body>
 
-      <mat-form-field appearance="fill" style="width: 30%">
-        <mat-label>Email</mat-label>
+      <form [formGroup]="loginForm">
 
-        <label>
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+
           <input matInput formControlName="email" required>
-        </label>
-      </mat-form-field>
-    </form>
+          <mat-error
+            *ngIf="loginForm.get('email').hasError('required') && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+            Email is required.
+          </mat-error>
 
-    <form [formGroup]="loginForm">
-      <ng-container *ngFor="let error of error_messages.password">
-        <div
-          *ngIf="loginForm.get('password').hasError(error.type) && (loginForm.get('password').dirty || loginForm.get('password').touched)">
-          {{error.message}}
-        </div>
-      </ng-container>
+          <mat-error
+            *ngIf="loginForm.get('email').hasError('email') && (loginForm.get('email').dirty || loginForm.get('email').touched)">
+            Please enter a valid email.
+          </mat-error>
+        </mat-form-field>
 
-      <mat-form-field appearance="fill">
-        <mat-label>Password</mat-label>
+      </form>
 
-        <label>
+      <form [formGroup]="loginForm">
+
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
           <input matInput type="password" formControlName="password" required>
-        </label>
-      </mat-form-field>
-    </form>
+          <mat-error
+            *ngIf="loginForm.get('password').hasError('required') && (loginForm.get('password').dirty || loginForm.get('password').touched)">
+            Password is required.
+          </mat-error>
+        </mat-form-field>
+      </form>
 
-    <button color='primary' mat-raised-button (click)="authLogin()" [disabled]="!loginForm.valid">Login</button>
-  </app-panel-body>
-</app-panel>
+    </app-panel-body>
+
+  </app-panel>
+
+</app-modal>

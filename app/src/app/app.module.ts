@@ -34,6 +34,7 @@ import { environment } from '../environments/environment';
 import {SearchResultsModule} from "./search-results/search-results.module";
 import {ProfileModule} from "./profile/profile.module";
 import {profileEffects} from "./store/effects/auth.effects";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import {profileEffects} from "./store/effects/auth.effects";
     MatDialogModule,
     MatChipsModule,
     MatAutocompleteModule,
+    MatProgressSpinnerModule,
 
     HomeModule,
     SearchResultsModule,

@@ -22,12 +22,26 @@ export class AuthService {
     this.urlApi = environment.apiUrl + '/auth';
   }
 
-  updateOrCreate(profile) {
+  update(profile) {
     let name = profile.controls.name.value;
     let email = profile.controls.email.value;
     let password = profile.controls.password.value;
 
-    let url = `${this.urlApi}/updateOrCreate`;
+    let url = `${this.urlApi}/update`;
+
+    return this.http.get(url, {
+      params: {
+        name, email, password
+      }
+    });
+  }
+
+  create(profile) {
+    let name = profile.controls.name.value;
+    let email = profile.controls.email.value;
+    let password = profile.controls.password.value;
+
+    let url = `${this.urlApi}/create`;
 
     return this.http.get(url, {
       params: {

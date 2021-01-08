@@ -13,6 +13,7 @@ import * as fromAuthActions from '../../store/actions/auth.actions';
 })
 export class CreateProfileAccountComponent implements OnInit {
   public createProfileForm: FormGroup;
+  public loading: true;
 
   error_messages = {
     'name': [
@@ -82,12 +83,8 @@ export class CreateProfileAccountComponent implements OnInit {
   }
 
   submitRegistration() {
+    this.loading = true;
     this.store.dispatch(fromAuthActions.createProfileAction({payload: this.createProfileForm}));
-
-    this.getProfile();
-  }
-
-  getProfile() {
   }
 
 }

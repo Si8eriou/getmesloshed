@@ -23,6 +23,8 @@ import { PanelBodyComponent } from './components/panel/panel-body/panel-body.com
 import { PanelComponent } from './components/panel/panel/panel.component';
 import {MatDialogModule} from "@angular/material/dialog";
 import { ModalComponent } from './components/modal/modal.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 
 @NgModule({
@@ -37,6 +39,7 @@ import { ModalComponent } from './components/modal/modal.component';
       PanelBodyComponent,
       PanelComponent,
       ModalComponent,
+      LoadingSpinnerComponent,
     ],
   exports: [
     AppHeaderComponent,
@@ -46,7 +49,8 @@ import { ModalComponent } from './components/modal/modal.component';
     PanelHeaderComponent,
     PanelBodyComponent,
     PanelComponent,
-    ModalComponent
+    ModalComponent,
+    LoadingSpinnerComponent
   ],
     imports: [
         CommonModule,
@@ -61,7 +65,8 @@ import { ModalComponent } from './components/modal/modal.component';
         MatAutocompleteModule,
         MatChipsModule,
         MatFormFieldModule,
-        MatDialogModule
+        MatDialogModule,
+        MatProgressSpinnerModule
     ]
 })
 export class CommonComponentsModule { }

@@ -5,13 +5,16 @@ export const searchFeatureKey = 'search';
 
 export interface State {
   loading: boolean;
-  searching: boolean
+  searching: boolean;
 
   searchInfo: any;
   searchInfoSuccessful: boolean;
   searchInfoFailed: any;
 
   search: any;
+  searchSuccessful: boolean;
+  searchFailed: any;
+  prevSearchCriteria: any;
 }
 
 export const initialState: State = {
@@ -23,6 +26,9 @@ export const initialState: State = {
   searchInfoFailed: false,
 
   search: false,
+  searchSuccessful: null,
+  searchFailed: null,
+  prevSearchCriteria: null
 }
 
 const searchReducer = createReducer(
@@ -47,18 +53,20 @@ const searchReducer = createReducer(
 
   on(searchActions.search, (state, action) => ({
   ...state,
-  searching: true,
+  searching: true, prevSearchCriteria: action.payload
 })),
 
   on(searchActions.searchSuccessful, (state, action) => ({
     ...state,
+    search: action.payload,
     searching: false,
-    search: action.payload
+    searchSuccessful: true
   })),
 
   on(searchActions.searchFailed, (state, action) => ({
     ...state,
     searching: false,
+    searchFailed: action.error,
     search: action.error
   }))
 )
@@ -69,4 +77,14 @@ export function reducer(state: State | undefined, action: Action) {
 
 export const getSearchInfo = (state: State) => state.searchInfo;
 
-export const getSearchResults = (state: State) => state.search;
+export const getSearchResults = (state: State) => [
+  'search',
+  'searching',
+  'searchSuccessful',
+  'searchFailed',
+  'prevSearchCriteria',
+].reduce((carry, item) =>
+{
+  carry[item] = state[item];
+  return carry;
+}, {});

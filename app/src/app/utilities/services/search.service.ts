@@ -36,4 +36,8 @@ export class SearchService {
     });
   }
 
+  pagination(url) {
+    return this.http.get(url);
+  }
+
 }

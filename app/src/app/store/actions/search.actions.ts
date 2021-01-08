@@ -16,7 +16,7 @@ export const setupSearchInformationFailed = createAction(
 
 export const search = createAction(
   '[Search] search for params',
-  props<{payload: any}>()
+  props<{payload: any, page?: any}>()
 );
 
 export const searchSuccessful = createAction(

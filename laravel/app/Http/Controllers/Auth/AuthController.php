@@ -9,11 +9,18 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function login(Request $request, AuthRepository $authRepo) {
-        return $authRepo->login($request);
+    public function login(Request $request, AuthRepository $authRepo)
+    {
+        return response()->json($authRepo->login($request));
     }
 
-    public function updateOrCreate(Request $request, AuthRepository $authRepo) {
-        return $authRepo->updateOrCreate($request);
+    public function update(Request $request, AuthRepository $authRepository)
+    {
+        return response()->json($authRepository->update($request->all()));
+    }
+
+    public function create(Request $request, AuthRepository $authRepository)
+    {
+        return response()->json($authRepository->createUser($request->all()));
     }
 }

@@ -38,7 +38,10 @@ export class LoginProfileComponent implements OnInit {
   }
 
   authLogin($event) {
-    this.store.dispatch(fromAuth.loginProfileAction({payload: {email: this.loginForm.controls['email'].value, password: this.loginForm.controls['password'].value}}));
+    this.store.dispatch(fromAuth.loginProfileAction({payload:
+        {email: this.loginForm.controls['email'].value,
+          password: this.loginForm.controls['password'].value}
+    }));
 
     this.store.select(fromRoot.getAuthLoginSuccess).subscribe((success) => {
       if(success) {

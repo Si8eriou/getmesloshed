@@ -11,8 +11,7 @@ class AuthRepository
 {
     public function login($credentials)
     {
-        $user = User::where('email', $credentials->get('email'))
-            ->first();
+        $user = $this->getUserFromEmail($credentials->get('email'));
 
         if ($user && $user->password === $credentials->get('password')) {
             return $user;
@@ -20,8 +19,6 @@ class AuthRepository
 
         return false;
     }
-
-    //TODO:: create and update need to be fixed. Check if email is already in use before creating.
 
     public function update($profile)
     {
@@ -40,15 +37,43 @@ class AuthRepository
     public function createUser($profile)
     {
         try {
-            return User::create([
-                'name' => $profile->get('name'),
-                'email' => $profile->get('email'),
-                'password' => $profile->get('password'),
-                'remember_token' => Str::random(60)
-            ]);
+            if (!$this->isEmailAlreadyInUse($profile['email'])) {
+                $user = User::create([
+                    'name' => $profile['name'],
+                    'email' => $profile['email'],
+                    'password' => $profile['password'],
+                    'remember_token' => Str::random(60)
+                ]);
+
+                return [
+                    'success' => true,
+                    'message' => 'Created user successfully',
+                    'user' => $user
+                ];
+            } else {
+                return [
+                    'success' => false,
+                    'message' => 'Email already in use.'
+                ];
+            }
         } catch (\Exception $err) {
-            return $err;
+            return [
+                'success' => false,
+                'message' => 'exception throw',
+                'exception' => $err
+            ];
         }
+    }
+
+    private function getUserFromEmail($email)
+    {
+        return User::where('email', $email)
+            ->first();
+    }
+
+    private function isEmailAlreadyInUse($email)
+    {
+        return (!!$this->getUserFromEmail($email));
     }
 
 }

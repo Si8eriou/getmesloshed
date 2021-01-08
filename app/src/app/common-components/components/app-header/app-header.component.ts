@@ -18,9 +18,7 @@ export class AppHeaderComponent implements OnInit {
   }
 
   getProfile() {
-    this.store.select(fromRoot.getAuthUser).pipe(
-      take(1)
-    ).subscribe((authenticated) => {
+    this.store.select(fromRoot.getAuthUser).subscribe((authenticated) => {
       this.authenticated = authenticated;
     })
   }

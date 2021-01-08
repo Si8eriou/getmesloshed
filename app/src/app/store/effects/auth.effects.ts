@@ -11,7 +11,7 @@ export class profileEffects {
 
   createProfile$ = createEffect(() => this.actions$.pipe(
     ofType(authActions.createProfileAction.type),
-    switchMap((profile: any) => this.authService.updateOrCreate(profile.payload)),
+    switchMap((profile: any) => this.authService.create(profile.payload)),
     map((response: any) => authActions.createProfileSuccessfulAction({payload: response})),
     catchError((error: string) => of(authActions.createProfileFailedAction({payload: error})))
   ));
@@ -25,7 +25,7 @@ export class profileEffects {
 
   editProfile$ = createEffect(() => this.actions$.pipe(
     ofType(authActions.editProfileAction.type),
-    switchMap((profile: any) => this.authService.updateOrCreate(profile.payload)),
+    switchMap((profile: any) => this.authService.update(profile.payload)),
     map((response: any) => authActions.editProfileSuccessfulAction({payload: response})),
     catchError((error: string) => of(authActions.editProfileFailedAction({payload: error})))
   ));

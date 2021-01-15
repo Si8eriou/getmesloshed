@@ -1,0 +1,7 @@
+<div class="panel__body">
+  <div *ngFor="let ingredient of drink?.ingredients">
+    <ul *ngIf="ingredient?.ingredient">
+      <li>{{ingredient.ingredient.name}} <span *ngIf="ingredient.amount">- {{ingredient.amount}}</span></li>
+    </ul>
+  </div>
+</div>

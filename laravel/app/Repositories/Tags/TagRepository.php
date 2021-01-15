@@ -5,11 +5,14 @@ namespace App\Repositories\Tags;
 
 
 use App\Models\Tag;
+use Illuminate\Support\Facades\Cache;
 
 class TagRepository
 {
     public function getAllTagNames()
     {
-        return Tag::all()->sortBy('name')->pluck('name');
+        return Cache::rememberForever('tags', function () {
+            return Tag::all()->sortBy('name')->pluck('name');
+        });
     }
 }

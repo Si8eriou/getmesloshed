@@ -1,0 +1,140 @@
+.container {
+  width: 100%;
+  margin: 0;
+  position: relative;
+
+  @media screen and (min-width: 767px) {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  @media screen and (min-width: 1344px) {
+    max-width: 1344px;
+    margin: 0 auto;
+  }
+}
+
+.columns {
+  display: flex;
+  margin-left: -.75rem;
+  margin-right: -.75rem;
+  flex-flow: column nowrap;
+
+  @media screen and (min-width: 767px) {
+    flex-direction: row;
+  }
+
+  &.is-mobile {
+    flex-direction: row;
+  }
+
+  &.is-multiline {
+    flex-wrap: wrap;
+  }
+
+  &.is-gapless {
+    margin-left: 0;
+    margin-right: 0;
+
+    & > .column {
+      margin: 0;
+      padding: 0 !important;
+    }
+  }
+
+  &.is-centered {
+    justify-content: center;
+  }
+}
+
+@mixin gridSize($column) {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc( (#{$column} / 12) * 100% )
+}
+
+.column {
+  display: block;
+  flex: 1 1 auto;
+  padding: .75rem;
+
+  // Columns only activated on tablet size and upwards
+  @media screen and (min-width: 767px) {
+    &.is-1 {
+      @include gridSize(1);
+    }
+    &.is-2 {
+      @include gridSize(2);
+    }
+    &.is-3, &.is-one-quarter {
+      @include gridSize(3);
+    }
+    &.is-4, &.is-one-third {
+      @include gridSize(4);
+    }
+    &.is-5 {
+      @include gridSize(5);
+    }
+    &.is-6, &.is-half {
+      @include gridSize(6);
+    }
+    &.is-7 {
+      @include gridSize(7);
+    }
+    &.is-8, &.is-two-thirds {
+      @include gridSize(8);
+    }
+    &.is-9 {
+      @include gridSize(9);
+    }
+    &.is-10 {
+      @include gridSize(10);
+    }
+    &.is-11 {
+      @include gridSize(11);
+    }
+    &.is-12 {
+      @include gridSize(12);
+    }
+  }
+
+  @media screen and (max-width: 766px) {
+    &.is-half-mobile {
+      @include gridSize(6);
+    }
+
+    &.is-mobile {
+      &.is-one-quarter {
+        @include gridSize(3);
+      }
+      &.is-half {
+        @include gridSize(6);
+      }
+
+    }
+  }
+
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.is-centered-vertical {
+  display: flex;
+  align-items: center;
+}
+
+// Horizontal padding for devices iPad and smaller
+.container--has-horizontal-padding {
+  padding: 0 2rem;
+
+  @media screen and (min-width: 1025px){
+    padding: 0;
+  }
+}

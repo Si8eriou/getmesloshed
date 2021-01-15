@@ -1,0 +1,42 @@
+<app-modal [name]="'createProfileModal'" [showSaveButton]="true" [showCancelButton]="true" (save)="submitRegistration()"
+>
+
+  <app-panel>
+
+    <app-panel-header>Create Profile</app-panel-header>
+
+    <app-panel-body>
+
+      <form [formGroup]="createProfileForm">
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+      </form>
+
+      <form [formGroup]="createProfileForm">
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email">
+        </mat-form-field>
+      </form>
+
+      <form [formGroup]="createProfileForm">
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput formControlName="password" type="password">
+        </mat-form-field>
+      </form>
+
+      <form [formGroup]="createProfileForm">
+        <mat-form-field>
+          <mat-label>Confirm Password</mat-label>
+          <input matInput formControlName="confirmpassword" type="password">
+        </mat-form-field>
+      </form>
+
+    </app-panel-body>
+
+  </app-panel>
+
+</app-modal>

@@ -18,10 +18,17 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['prefix' => 'cocktail'], function () {
-    Route::get('doSomething', 'App\Http\Controllers\Cocktail\CocktailController@doParser');
+Route::group(['prefix' => '/cocktail'], function () {
+    Route::get('/doSomething', 'App\Http\Controllers\Cocktail\CocktailController@doParser');
 });
 
 Route::group(['prefix' => 'search'], function () {
+    Route::get('search', 'App\Http\Controllers\Search\SearchController@search');
     Route::get('getSearchInfo', 'App\Http\Controllers\Search\SearchController@getSearchInfo');
+});
+
+Route::group(['prefix' => 'auth'], function () {
+    Route::get('update', 'App\Http\Controllers\Auth\AuthController@update');
+    Route::get('create', 'App\Http\Controllers\Auth\AuthController@create');
+    Route::get('login', 'App\Http\Controllers\Auth\AuthController@login');
 });

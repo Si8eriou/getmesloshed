@@ -1,0 +1,22 @@
+<div class="panel__body" style="overflow: hidden !important;" *ngIf="drink.name">
+
+  <div>
+    <app-drink-name>{{drink.name}}</app-drink-name>
+  </div>
+
+  <div *ngIf="drink.image">
+    <app-drink-image [drink]="drink"></app-drink-image>
+  </div>
+
+  <div *ngIf="drink.glass">
+    <app-drink-glass [drink]="drink"></app-drink-glass>
+  </div>
+
+  <div *ngIf="drink.ingredients">
+    <app-drink-ingredient-list [drink]="drink"></app-drink-ingredient-list>
+  </div>
+
+  <div *ngIf="drink.instruction">
+    <app-drink-instructions [drink]="drink"></app-drink-instructions>
+  </div>
+</div>

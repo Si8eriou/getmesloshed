@@ -1,19 +1,43 @@
 <mat-toolbar class="toolBar">
 
-  <button mat-icon-button>
+  <button mat-icon-button (click)="sidenav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
 
   <span class="alignContent"></span>
 
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
+  <button mat-button [routerLink]="['']">
+    <app-app-logo></app-app-logo>
   </button>
 
   <span class="alignContent"></span>
 
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
+  <button mat-icon-button [routerLink]="['/profile/drinks-profile']">
+    <mat-icon>local_bar</mat-icon>
+  </button>
+
+  <button mat-icon-button [matMenuTriggerFor]="profile_menu">
+    <mat-icon>person</mat-icon>
   </button>
 
 </mat-toolbar>
+
+<mat-menu #profile_menu=matMenu>
+  <button mat-menu-item [routerLink]="['/profile/acct']">{{authenticated ? 'Profile' : 'Login' }}</button>
+  <button mat-menu-item *ngIf="authenticated" [routerLink]="['/profile/settings']">Settings</button>
+
+  <!--  TODO login-->
+
+  <!--  //TODO logout-->
+  <!--  <button mat-menu-item (click)="logout()">-->
+  <!--    Logout-->
+  <!--    <mat-icon>exit_to_app</mat-icon>-->
+  <!--  </button>-->
+</mat-menu>
+
+<mat-sidenav-container [class.mat-elevation-z2]="true">
+  <mat-sidenav #sidenav>
+    <app-side-navigation></app-side-navigation>
+  </mat-sidenav>
+
+</mat-sidenav-container>

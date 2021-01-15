@@ -1,0 +1,11 @@
+<mat-dialog-content class="{{class || ''}}">
+  <ng-content></ng-content>
+</mat-dialog-content>
+
+<mat-dialog-actions style="justify-content: center">
+  <button *ngIf="showSaveButton" (click)="save.emit($event)" mat-raised-button mat-dialog-close>Save</button>
+  <button *ngIf="showCloseButton" (click)="close.emit($event)" mat-raised-button mat-dialog-close>Cancel</button>
+  <button *ngIf="showCancelButton" (click)="cancel.emit($event)" mat-raised-button mat-dialog-close>Close</button>
+  <button *ngIf="wildCardButtonOne" (click)="wildCardButtonOneEvent.emit($event)" mat-raised-button mat-dialog-close>{{wildCardButtonOne}}</button>
+  <button *ngIf="wildCardButtonTwo" (click)="wildCardButtonTwoEvent.emit($event)" mat-raised-button mat-dialog-close>{{wildCardButtonTwo}}</button>
+</mat-dialog-actions>

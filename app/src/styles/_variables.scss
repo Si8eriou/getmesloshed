@@ -1,0 +1,65 @@
+// Colors
+$black: hsl(0, 0%, 4%);
+$black-bis: hsl(0, 0%, 7%);
+$black-ter: hsl(0, 0%, 14%);
+$black-est: hsl(0, 0%, 20%);
+$grey-darker: hsl(0, 0%, 21%);
+$grey-dark: hsl(0, 0%, 29%);
+$grey: hsl(0, 0%, 48%);
+$grey-light: hsl(0, 0%, 71%);
+$grey-lighter: hsl(0, 0%, 86%);
+$grey-lightest: hsl(0, 0%, 90%);
+$white-ter: hsl(0, 0%, 96%);
+$white-bis: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+$orange: hsl(14, 100%, 53%);
+$yellow: hsl(48, 100%, 67%);
+$green: hsl(141, 71%, 48%);
+$turquoise: hsl(171, 100%, 41%);
+$cyan: hsl(204, 86%, 53%);
+$blue: hsl(217, 71%, 53%);
+$purple: hsl(271, 100%, 71%);
+$red: hsl(348, 99%, 40%);
+
+// Inspection Forms Condition Colors
+$tire-condition-danger: #fcd7ce;
+$tire-condition-danger-darker: #ed2a2d;
+$tire-condition-success: #f0ffd7;
+$tire-condition-success-darker: #aad95b;
+$tire-condition-warning: #fefdd3;
+$tire-condition-warning-darker: #e4e338;
+
+$tireguru-orange: #E95D03;
+$theme-dark-background: #393939;
+$theme-dark-text-color: $white;
+
+$primary: $tireguru-orange;
+$primary-invert: $white-ter;
+
+// Typography
+$font-size-base: 14px;
+$line-height-base: 1.35;
+$text-color: $black-ter;
+
+$size-1: 2.25rem;
+$size-2: 1.75rem;
+$size-3: 1.25rem;
+$size-4: 1rem;
+$size-5: .875rem;
+$size-6: .75rem;
+
+$spacing-1: .35rem;
+$spacing-2: .75rem;
+$spacing-3: 1rem;
+$spacing-4: 1.35rem;
+$spacing-5: 1.75rem;
+$spacing-6: 2rem;
+
+$weight-light:	300;
+$weight-normal:	400;
+$weight-medium:	500;
+$weight-semibold:	600;
+$weight-bold:	700;
+
+$size-tablet: 800px;
+$size-small: 600px;

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeRoutingModule} from "./home/home-routing.module";
 
 const routes: Routes = [
   {
@@ -11,6 +10,14 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: './home/home.module#HomeModule',
+  },
+  {
+    path: 'search-results',
+    loadChildren: './search-results/search-results.module#SearchResultsModule'
+  },
+  {
+    path: 'profile',
+    loadChildren: './profile/profile.module#ProfileModule'
   }
 ];
 

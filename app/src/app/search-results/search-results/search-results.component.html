@@ -1,0 +1,32 @@
+<app-panel>
+  <app-panel-header>Search Results</app-panel-header>
+
+  <app-panel-body class="search-results-body" *ngIf="!loading">
+    <div>
+      <div class="column" *ngFor="let drink of searchResults.search.data">
+        <app-drink-view [drink]="drink"></app-drink-view>
+      </div>
+    </div>
+
+    <div class="centered-text" style="  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 -3rem;" *ngIf="!loading">
+      <button mat-icon-button *ngIf="searchResults?.search?.prev_page_url" (click)="getSearchPaginationPage(currentPage - 1)">
+        <mat-icon>navigate_before</mat-icon>
+      </button>
+
+      <button mat-raised-button disabled><span style="color: black">{{currentPage}}</span></button>
+
+      <button mat-icon-button *ngIf="searchResults?.search?.next_page_url" (click)="getSearchPaginationPage(currentPage + 1)">
+        <mat-icon>navigate_next</mat-icon>
+      </button>
+    </div>
+  </app-panel-body>
+</app-panel>
+
+<div *ngIf="loading" class="columns is-centered">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+

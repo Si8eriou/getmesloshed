@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CommonComponentsModule} from "./common-components/common-components.module";
-import { NavigationComponent } from './navigation/navigation.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from "@angular/material/icon";
 import { MatButtonModule } from "@angular/material/button";
@@ -30,11 +29,16 @@ import { reducers, metaReducers } from './store/reducers';
 
 import { EffectsModule } from '@ngrx/effects';
 import { searchEffects } from "./store/effects/search.effects";
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import {SearchResultsModule} from "./search-results/search-results.module";
+import {ProfileModule} from "./profile/profile.module";
+import {profileEffects} from "./store/effects/auth.effects";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,8 +67,11 @@ import { searchEffects } from "./store/effects/search.effects";
     MatDialogModule,
     MatChipsModule,
     MatAutocompleteModule,
+    MatProgressSpinnerModule,
 
     HomeModule,
+    SearchResultsModule,
+    ProfileModule,
 
     StoreModule.forRoot(reducers, {
       metaReducers,
@@ -76,9 +83,12 @@ import { searchEffects } from "./store/effects/search.effects";
 
     EffectsModule.forRoot(
       [
-        searchEffects
+        searchEffects,
+        profileEffects
       ]
-    )
+    ),
+
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

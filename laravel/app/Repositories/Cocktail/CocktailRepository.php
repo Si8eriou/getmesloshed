@@ -10,6 +10,7 @@ use App\Models\DrinkIngredientRelationship;
 use App\Models\Glass;
 use App\Models\Ingredient;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Cache;
 
 class CocktailRepository
 {
@@ -21,7 +22,9 @@ class CocktailRepository
 
     public function getAllDrinksNames()
     {
-        return Drink::all()->sortBy('name')->pluck('name');
+        return Cache::rememberForever('drinks', function () {
+            return Drink::all()->sortBy('name')->pluck('name');
+        });
     }
 
     public function getDrinkByID($drinkID)
@@ -29,14 +32,12 @@ class CocktailRepository
         return Drink::find('id', $drinkID);
     }
 
-    public function searchDrinkByName($search)
-    {
-        //TODO: search drink by name
-    }
-
     public function getRandomDrinks()
     {
-        return Drink::inRandomOrder()->limit(5)->get();
+        return Drink::inRandomOrder()
+            ->with('glass', 'ingredients.ingredient')
+            ->limit(10)
+            ->paginate(5);
     }
 
     public function getDrinksByGlass($glassID)
@@ -49,11 +50,6 @@ class CocktailRepository
         return Drink::where('id', $drinkID)
             ->where('ingredientsRelationship.ingredient')
             ->get();
-    }
-
-    public function getDrinksByIngredients($ingredients)
-    {
-        //TODO: drinks by ingredients
     }
 
     public function getDrinksByCategory($categoryID)

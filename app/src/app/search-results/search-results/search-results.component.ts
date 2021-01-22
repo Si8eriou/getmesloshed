@@ -38,16 +38,11 @@ export class SearchResultsComponent implements OnInit {
         ).subscribe((result) => {
             this.loading = false;
             this.searchResults = result;
-            this.resetSearchSuccessful();
         })
     }
 
     get currentPage() {
         return this.searchResults.search.current_page;
-    }
-
-    resetSearchSuccessful() {
-      this.store.dispatch(fromSearchAction.searchSuccessful(null));
     }
 
 }

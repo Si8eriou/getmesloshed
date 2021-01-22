@@ -77,6 +77,7 @@ export class SearchComponent implements OnInit {
     this.store.dispatch(fromSearchActions.setupSearchInformation());
 
     this.store.select(fromRoot.getSearchInfo).pipe(
+      skipWhile((info) => !info),
       skipWhile((info) => info.length === 0),
       take(1)
     ).subscribe((info) => {

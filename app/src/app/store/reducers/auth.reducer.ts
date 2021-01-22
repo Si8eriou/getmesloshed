@@ -1,7 +1,8 @@
 import {Action, createReducer, on} from "@ngrx/store";
 import * as profileActions from '../actions/auth.actions';
+import * as storage from '../storage';
 
-export const searchFeatureKey = 'auth';
+export const authFeatureKey = 'auth';
 
 export interface State {
   loading: boolean;
@@ -26,7 +27,6 @@ export const initialState: State = {
 
   createProfileSuccessful: null,
   createProfileFailed: null,
-
   loginProfileSuccessful: null,
   loginProfileFailed: null,
 
@@ -36,7 +36,7 @@ export const initialState: State = {
   editProfileSuccessful: null,
   editProfileFailed: null,
 
-  profile: null,
+  profile: storage.getItem(authFeatureKey).profile ?? null,
 }
 
 const searchReducer = createReducer(

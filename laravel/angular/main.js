@@ -338,21 +338,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchResults", function() { return getSearchResults; });
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
 /* harmony import */ var _actions_search_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/search.actions */ "fwzw");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../storage */ "xMh2");
+
 
 
 const searchFeatureKey = 'search';
 const initialState = {
-    loading: false,
-    searching: false,
-    searchInfo: [],
-    searchInfoSuccessful: false,
-    searchInfoFailed: false,
-    search: false,
-    searchSuccessful: null,
-    searchFailed: null,
-    prevSearchCriteria: null
+    loading: _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](searchFeatureKey).loading,
+    searching: _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](searchFeatureKey).searching,
+    searchInfo: _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](searchFeatureKey).searchInfo || null,
+    searchInfoSuccessful: _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](searchFeatureKey).searchInfoSuccessful,
+    searchInfoFailed: _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](searchFeatureKey).searchInfoFailed || null,
+    search: _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](searchFeatureKey).search || null,
+    searchSuccessful: _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](searchFeatureKey).searchSuccessful,
+    searchFailed: _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](searchFeatureKey).searchFailed || null,
+    prevSearchCriteria: _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](searchFeatureKey).prevSearchCriteria || null
 };
-const searchReducer = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createReducer"])(initialState, Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformation"], (state, action) => (Object.assign(Object.assign({}, state), { loading: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformationSuccessful"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, searchInfo: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformationFailed"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, searchInfoFailed: action.error }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["search"], (state, action) => (Object.assign(Object.assign({}, state), { searching: true, prevSearchCriteria: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["searchSuccessful"], (state, action) => (Object.assign(Object.assign({}, state), { search: action.payload, searching: false, searchSuccessful: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["searchFailed"], (state, action) => (Object.assign(Object.assign({}, state), { searching: false, searchFailed: action.error, search: action.error }))));
+const searchReducer = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createReducer"])(initialState, Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformation"], (state, action) => (Object.assign(Object.assign({}, state), { loading: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformationSuccessful"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, searchInfo: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["setupSearchInformationFailed"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, searchInfoFailed: action.error }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["search"], (state, action) => (Object.assign(Object.assign({}, state), { searching: true, searchSuccessful: null, prevSearchCriteria: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["searchSuccessful"], (state, action) => (Object.assign(Object.assign({}, state), { search: action.payload, searching: false, searchSuccessful: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_search_actions__WEBPACK_IMPORTED_MODULE_1__["searchFailed"], (state, action) => (Object.assign(Object.assign({}, state), { searching: false, searchFailed: action.error, search: action.error }))));
 function reducer(state, action) {
     return searchReducer(state, action);
 }
@@ -1507,21 +1509,24 @@ DrinkIngredientListComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__[
 /*!************************************************!*\
   !*** ./src/app/store/reducers/auth.reducer.ts ***!
   \************************************************/
-/*! exports provided: searchFeatureKey, initialState, reducer, getAuthUser, getAuthLoginSuccess */
+/*! exports provided: authFeatureKey, initialState, reducer, getAuthUser, getAuthLoginSuccess */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "searchFeatureKey", function() { return searchFeatureKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "authFeatureKey", function() { return authFeatureKey; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducer", function() { return reducer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAuthUser", function() { return getAuthUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAuthLoginSuccess", function() { return getAuthLoginSuccess; });
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
 /* harmony import */ var _actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/auth.actions */ "D7ij");
+/* harmony import */ var _storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../storage */ "xMh2");
+var _a;
 
 
-const searchFeatureKey = 'auth';
+
+const authFeatureKey = 'auth';
 const initialState = {
     loading: false,
     createProfileSuccessful: null,
@@ -1532,7 +1537,7 @@ const initialState = {
     loadProfileFailed: null,
     editProfileSuccessful: null,
     editProfileFailed: null,
-    profile: null,
+    profile: (_a = _storage__WEBPACK_IMPORTED_MODULE_2__["getItem"](authFeatureKey).profile) !== null && _a !== void 0 ? _a : null,
 };
 const searchReducer = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createReducer"])(initialState, Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__["createProfileAction"], (state, action) => (Object.assign(Object.assign({}, state), { loading: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__["createProfileSuccessfulAction"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, createProfileSuccessful: true, profile: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__["createProfileFailedAction"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, createProfileSuccessful: false, createProfileFailed: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__["loginProfileAction"], (state, action) => (Object.assign(Object.assign({}, state), { loading: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__["loginProfileSuccessfulAction"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, loginProfileSuccessful: true, profile: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__["loginProfileFailedAction"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, loginProfileSuccessful: false, loginProfileFailed: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__["editProfileAction"], (state, action) => (Object.assign(Object.assign({}, state), { loading: true }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__["editProfileSuccessfulAction"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, editProfileSuccessful: true, profile: action.payload }))), Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["on"])(_actions_auth_actions__WEBPACK_IMPORTED_MODULE_1__["editProfileFailedAction"], (state, action) => (Object.assign(Object.assign({}, state), { loading: false, editProfileSuccessful: false, editProfileFailed: action.payload }))));
 function reducer(state, action) {
@@ -2557,14 +2562,10 @@ class SearchResultsComponent {
         this.store.select(_store_reducers__WEBPACK_IMPORTED_MODULE_1__["getSearchResults"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["skipWhile"])((state) => state.searching === true), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["skipWhile"])((state) => state.searchSuccessful !== true), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["take"])(1)).subscribe((result) => {
             this.loading = false;
             this.searchResults = result;
-            this.resetSearchSuccessful();
         });
     }
     get currentPage() {
         return this.searchResults.search.current_page;
-    }
-    resetSearchSuccessful() {
-        this.store.dispatch(_store_actions_search_actions__WEBPACK_IMPORTED_MODULE_3__["searchSuccessful"](null));
     }
 }
 SearchResultsComponent.ɵfac = function SearchResultsComponent_Factory(t) { return new (t || SearchResultsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_4__["Store"])); };
@@ -2863,12 +2864,13 @@ DrinkImageComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefi
 /*!*****************************************!*\
   !*** ./src/app/store/reducers/index.ts ***!
   \*****************************************/
-/*! exports provided: reducers, search, getSearchInfo, getSearchResults, auth, getAuthUser, getAuthLoginSuccess, metaReducers */
+/*! exports provided: reducers, localStorageSyncReducer, search, getSearchInfo, getSearchResults, auth, getAuthUser, getAuthLoginSuccess, metaReducers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducers", function() { return reducers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "localStorageSyncReducer", function() { return localStorageSyncReducer; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "search", function() { return search; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchInfo", function() { return getSearchInfo; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSearchResults", function() { return getSearchResults; });
@@ -2878,23 +2880,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "metaReducers", function() { return metaReducers; });
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../environments/environment */ "AytR");
-/* harmony import */ var _search_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./search.reducer */ "8HKQ");
-/* harmony import */ var _auth_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./auth.reducer */ "bWQP");
+/* harmony import */ var ngrx_store_localstorage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngrx-store-localstorage */ "zzrz");
+/* harmony import */ var _search_reducer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./search.reducer */ "8HKQ");
+/* harmony import */ var _auth_reducer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./auth.reducer */ "bWQP");
+
 
 
 
 
 const reducers = {
-    [_search_reducer__WEBPACK_IMPORTED_MODULE_2__["searchFeatureKey"]]: _search_reducer__WEBPACK_IMPORTED_MODULE_2__["reducer"],
-    [_auth_reducer__WEBPACK_IMPORTED_MODULE_3__["searchFeatureKey"]]: _auth_reducer__WEBPACK_IMPORTED_MODULE_3__["reducer"]
+    [_search_reducer__WEBPACK_IMPORTED_MODULE_3__["searchFeatureKey"]]: _search_reducer__WEBPACK_IMPORTED_MODULE_3__["reducer"],
+    [_auth_reducer__WEBPACK_IMPORTED_MODULE_4__["authFeatureKey"]]: _auth_reducer__WEBPACK_IMPORTED_MODULE_4__["reducer"]
 };
-const search = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createFeatureSelector"])(_search_reducer__WEBPACK_IMPORTED_MODULE_2__["searchFeatureKey"]);
-const getSearchInfo = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(search, _search_reducer__WEBPACK_IMPORTED_MODULE_2__["getSearchInfo"]);
-const getSearchResults = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(search, _search_reducer__WEBPACK_IMPORTED_MODULE_2__["getSearchResults"]);
-const auth = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createFeatureSelector"])(_auth_reducer__WEBPACK_IMPORTED_MODULE_3__["searchFeatureKey"]);
-const getAuthUser = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(auth, _auth_reducer__WEBPACK_IMPORTED_MODULE_3__["getAuthUser"]);
-const getAuthLoginSuccess = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(auth, _auth_reducer__WEBPACK_IMPORTED_MODULE_3__["getAuthLoginSuccess"]);
-const metaReducers = !_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].production ? [] : [];
+const reducerKeys = [_search_reducer__WEBPACK_IMPORTED_MODULE_3__["searchFeatureKey"], _auth_reducer__WEBPACK_IMPORTED_MODULE_4__["authFeatureKey"]];
+function localStorageSyncReducer(reducer) {
+    return Object(ngrx_store_localstorage__WEBPACK_IMPORTED_MODULE_2__["localStorageSync"])({ keys: reducerKeys })(reducer);
+}
+const search = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createFeatureSelector"])(_search_reducer__WEBPACK_IMPORTED_MODULE_3__["searchFeatureKey"]);
+const getSearchInfo = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(search, _search_reducer__WEBPACK_IMPORTED_MODULE_3__["getSearchInfo"]);
+const getSearchResults = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(search, _search_reducer__WEBPACK_IMPORTED_MODULE_3__["getSearchResults"]);
+const auth = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createFeatureSelector"])(_auth_reducer__WEBPACK_IMPORTED_MODULE_4__["authFeatureKey"]);
+const getAuthUser = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(auth, _auth_reducer__WEBPACK_IMPORTED_MODULE_4__["getAuthUser"]);
+const getAuthLoginSuccess = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createSelector"])(auth, _auth_reducer__WEBPACK_IMPORTED_MODULE_4__["getAuthLoginSuccess"]);
+const metaReducers = !_environments_environment__WEBPACK_IMPORTED_MODULE_1__["environment"].production ? [localStorageSyncReducer] : [localStorageSyncReducer];
 
 
 /***/ }),
@@ -3204,6 +3212,77 @@ DrinkViewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
 
 /***/ }),
 
+/***/ "xMh2":
+/*!**********************************!*\
+  !*** ./src/app/store/storage.ts ***!
+  \**********************************/
+/*! exports provided: getThisState, getItem, saveItem, getItemByKey, deleteItemByKey, emptyLocalStorage, clearStorage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getThisState", function() { return getThisState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getItem", function() { return getItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveItem", function() { return saveItem; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getItemByKey", function() { return getItemByKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteItemByKey", function() { return deleteItemByKey; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "emptyLocalStorage", function() { return emptyLocalStorage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearStorage", function() { return clearStorage; });
+const getThisState = (stateName) => {
+    try {
+        const serializedState = localStorage.getItem(stateName);
+        if (serializedState === null) {
+            return undefined;
+        }
+        return JSON.parse(serializedState);
+    }
+    catch (err) {
+        return undefined;
+    }
+};
+const getItem = (itemName) => {
+    const items = getThisState(itemName);
+    if (items === undefined) {
+        return false;
+    }
+    else {
+        return items;
+    }
+};
+const saveItem = (key, data) => {
+    const serializedState = JSON.stringify(data);
+    localStorage.setItem(key, serializedState);
+};
+const getItemByKey = (key) => {
+    try {
+        const serializedState = localStorage.getItem(key);
+        if (serializedState === null) {
+            return undefined;
+        }
+        return JSON.parse(serializedState);
+    }
+    catch (err) {
+        return undefined;
+    }
+};
+const deleteItemByKey = (key) => localStorage.setItem(key, null);
+const emptyLocalStorage = (reducerkeys) => {
+    try {
+        if (undefined != reducerkeys && reducerkeys.length > 0) {
+            reducerkeys.forEach(key => {
+                localStorage.setItem(key, null);
+            });
+        }
+    }
+    catch (err) {
+        //console.log("ERROR===emptyLocalStorage==>>>")
+    }
+};
+const clearStorage = () => localStorage.clear();
+
+
+/***/ }),
+
 /***/ "xQfs":
 /*!*************************************************************************!*\
   !*** ./src/app/common-components/components/search/search.component.ts ***!
@@ -3325,7 +3404,7 @@ class SearchComponent {
     }
     setUpSearch() {
         this.store.dispatch(_store_actions_search_actions__WEBPACK_IMPORTED_MODULE_4__["setupSearchInformation"]());
-        this.store.select(_store_reducers__WEBPACK_IMPORTED_MODULE_5__["getSearchInfo"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["skipWhile"])((info) => info.length === 0), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe((info) => {
+        this.store.select(_store_reducers__WEBPACK_IMPORTED_MODULE_5__["getSearchInfo"]).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["skipWhile"])((info) => !info), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["skipWhile"])((info) => info.length === 0), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["take"])(1)).subscribe((info) => {
             this.list = info;
         });
     }

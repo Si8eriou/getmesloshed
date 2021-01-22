@@ -10,10 +10,6 @@
       <change beforePath="$PROJECT_DIR$/laravel/angular/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/Auth/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/Auth/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Repositories/Auth/AuthRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Repositories/Auth/AuthRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,6 +197,7 @@
       <workItem from="1607704931602" duration="2984000" />
       <workItem from="1607710500572" duration="10100000" />
       <workItem from="1609438795015" duration="1187000" />
+      <workItem from="1611348751326" duration="735000" />
     </task>
     <servers />
   </component>

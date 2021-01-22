@@ -1,5 +1,6 @@
 import {Action, createReducer, on} from "@ngrx/store";
 import * as searchActions from '../actions/search.actions';
+import * as storage from '../storage';
 
 export const searchFeatureKey = 'search';
 
@@ -18,17 +19,17 @@ export interface State {
 }
 
 export const initialState: State = {
-  loading: false,
-  searching: false,
+  loading: storage.getItem(searchFeatureKey).loading,
+  searching: storage.getItem(searchFeatureKey).searching,
 
-  searchInfo: [],
-  searchInfoSuccessful: false,
-  searchInfoFailed: false,
+  searchInfo:  storage.getItem(searchFeatureKey).searchInfo || null,
+  searchInfoSuccessful: storage.getItem(searchFeatureKey).searchInfoSuccessful,
+  searchInfoFailed: storage.getItem(searchFeatureKey).searchInfoFailed || null,
 
-  search: false,
-  searchSuccessful: null,
-  searchFailed: null,
-  prevSearchCriteria: null
+  search: storage.getItem(searchFeatureKey).search || null,
+  searchSuccessful: storage.getItem(searchFeatureKey).searchSuccessful,
+  searchFailed: storage.getItem(searchFeatureKey).searchFailed || null,
+  prevSearchCriteria: storage.getItem(searchFeatureKey).prevSearchCriteria || null
 }
 
 const searchReducer = createReducer(
@@ -52,9 +53,11 @@ const searchReducer = createReducer(
   })),
 
   on(searchActions.search, (state, action) => ({
-  ...state,
-  searching: true, prevSearchCriteria: action.payload
-})),
+    ...state,
+    searching: true,
+    searchSuccessful: null,
+    prevSearchCriteria: action.payload
+  })),
 
   on(searchActions.searchSuccessful, (state, action) => ({
     ...state,
@@ -83,8 +86,7 @@ export const getSearchResults = (state: State) => [
   'searchSuccessful',
   'searchFailed',
   'prevSearchCriteria',
-].reduce((carry, item) =>
-{
+].reduce((carry, item) => {
   carry[item] = state[item];
   return carry;
 }, {});

@@ -1,7 +1,10 @@
 <div class="panel__body" style="overflow: hidden !important;" *ngIf="drink.name">
 
   <div>
-    <app-drink-name>{{drink.name}}</app-drink-name>
+    <app-drink-name>
+      <mat-icon (click)="toggleUserDrinks(drink.id)">star_border</mat-icon>
+      {{drink.name}}
+    </app-drink-name>
   </div>
 
   <div *ngIf="drink.image">

@@ -11,6 +11,7 @@ import { DrinkImageComponent } from './drink-view/drink-image/drink-image.compon
 import { DrinkInstructionsComponent } from './drink-view/drink-instructions/drink-instructions.component';
 import { DrinkGlassComponent } from './drink-view/drink-glass/drink-glass.component';
 import { DrinkNameComponent } from './drink-view/drink-name/drink-name.component';
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { DrinkNameComponent } from './drink-view/drink-name/drink-name.component
     ],
     imports: [
         CommonModule,
-        DrinkRoutingModule
+        DrinkRoutingModule,
+        MatIconModule
     ]
 })
 export class DrinkModule { }

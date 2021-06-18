@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../../environments/environment";
 import {Router} from "@angular/router";
@@ -16,7 +16,23 @@ export class ProfileService {
   constructor(private http: HttpClient,
               private router: Router,
               private store: Store
-              ) {
+  ) {
+    this.urlApi = environment.apiUrl + '/profile';
+  }
+
+  removeProfileDrink(drink_id) {
+    console.log(drink_id);
+    let url = `${this.urlApi}/profile-drink/${drink_id}`;
+
+    return this.http.delete(url);
+  }
+
+  addProfileDrink(drink_id) {
+    console.log(drink_id);
+    console.log('this isa test');
+    let url = `${this.urlApi}/profile-drink/${drink_id}`;
+
+    return this.http.post(url, {});
   }
 
 }

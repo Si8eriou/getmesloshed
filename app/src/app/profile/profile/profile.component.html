@@ -2,12 +2,29 @@
   <app-panel-header>Profile</app-panel-header>
 
   <app-panel-body>
-    <div>
-      <app-edit-profile-account></app-edit-profile-account>
-    </div>
+    <div class="centered-text">
+      <div style="display: inline-block; min-width: 10em">
+        <mat-card>
+          <mat-card-title>Profile Info</mat-card-title>
 
-<!--    <div>-->
-<!--      <app-profile-settings></app-profile-settings>-->
-<!--    </div>-->
+          <mat-card-content>
+            <div>
+              <span class="is-bold">Name: </span>
+              <span>{{profile?.name}}</span>
+            </div>
+
+            <div>
+              <span class="is-bold">Email: </span>
+              <span>{{profile?.email}}</span>
+            </div>
+          </mat-card-content>
+        </mat-card>
+
+
+        <!--    <div>-->
+        <!--      <app-profile-settings></app-profile-settings>-->
+        <!--    </div>-->
+      </div>
+    </div>
   </app-panel-body>
 </app-panel>

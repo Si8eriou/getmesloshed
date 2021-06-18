@@ -5,16 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e2cfe40-dfab-4613-ae55-560b0f86db93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/laravel/app/Profile/Libraries/ProfileDrinkLibrary.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/polyfills.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/polyfills.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/polyfills.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/polyfills.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/runtime.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/runtime.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/styles.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/styles.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/Controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/composer.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

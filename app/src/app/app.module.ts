@@ -33,7 +33,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import {SearchResultsModule} from "./search-results/search-results.module";
 import {ProfileModule} from "./profile/profile.module";
-import {profileEffects} from "./store/effects/auth.effects";
+import {authEffects} from "./store/effects/auth.effects";
+import {profileEffects} from "./store/effects/profile.effects";
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
@@ -83,6 +84,7 @@ import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
     EffectsModule.forRoot(
       [
+        authEffects,
         searchEffects,
         profileEffects
       ]

@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DrinksProfileComponent } from './drinks-profile/drinks-profile.component';
 import { LoginProfileComponent } from './login-profile/login-profile.component';
 import {MatButtonModule} from "@angular/material/button";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import {MatButtonModule} from "@angular/material/button";
     MatInputModule,
     ReactiveFormsModule,
     FormsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class ProfileModule { }

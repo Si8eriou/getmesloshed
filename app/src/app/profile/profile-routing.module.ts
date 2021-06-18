@@ -17,7 +17,6 @@ const routes: Routes = [
   {
     path: 'edit',
     component: EditProfileAccountComponent,
-    canActivate:[AuthService]
   },
   {
     path: 'create',
@@ -26,7 +25,6 @@ const routes: Routes = [
   {
     path: 'acct',
     component: ProfileComponent,
-    canActivate:[AuthService]
   },
   {
     path: 'settings',

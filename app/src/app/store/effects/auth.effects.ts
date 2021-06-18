@@ -7,7 +7,7 @@ import * as authActions from '../actions/auth.actions';
 import {AuthService} from "../../utilities/services/auth.service";
 
 @Injectable()
-export class profileEffects {
+export class authEffects {
 
   createProfile$ = createEffect(() => this.actions$.pipe(
     ofType(authActions.createProfileAction.type),

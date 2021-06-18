@@ -25,6 +25,7 @@ export class ProfileComponent implements OnInit {
       skipWhile((user) => !user),
       take(1)).subscribe((profile) => {
         this.profile = profile;
+        console.log(profile);
       }
     )
   }

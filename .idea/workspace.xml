@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e2cfe40-dfab-4613-ae55-560b0f86db93" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/angular/main.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/main.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/angular/vendor.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/angular/vendor.js.map" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +197,9 @@
       <workItem from="1607710500572" duration="10100000" />
       <workItem from="1609438795015" duration="1187000" />
       <workItem from="1611348751326" duration="735000" />
+      <workItem from="1613517382552" duration="64000" />
+      <workItem from="1613519723079" duration="156000" />
+      <workItem from="1624031148221" duration="421000" />
     </task>
     <servers />
   </component>

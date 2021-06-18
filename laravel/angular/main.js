@@ -608,12 +608,15 @@ __webpack_require__.r(__webpack_exports__);
 
 function DrinkGlassComponent_li_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "li");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "span", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Glass:");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"]("Glass: ", ctx_r0.drink.glass.name, "");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx_r0.drink.glass.name, "");
 } }
 class DrinkGlassComponent {
     constructor() { }
@@ -621,10 +624,10 @@ class DrinkGlassComponent {
     }
 }
 DrinkGlassComponent.ɵfac = function DrinkGlassComponent_Factory(t) { return new (t || DrinkGlassComponent)(); };
-DrinkGlassComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkGlassComponent, selectors: [["app-drink-glass"]], inputs: { drink: "drink" }, decls: 3, vars: 1, consts: [[1, "panel__body"], [4, "ngIf"]], template: function DrinkGlassComponent_Template(rf, ctx) { if (rf & 1) {
+DrinkGlassComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: DrinkGlassComponent, selectors: [["app-drink-glass"]], inputs: { drink: "drink" }, decls: 3, vars: 1, consts: [[1, "panel__body"], [4, "ngIf"], [1, "is-bold"]], template: function DrinkGlassComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "ul");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, DrinkGlassComponent_li_2_Template, 2, 1, "li", 1);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, DrinkGlassComponent_li_2_Template, 4, 1, "li", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
